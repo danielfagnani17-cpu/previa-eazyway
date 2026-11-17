@@ -1,0 +1,18 @@
+/* ==========================================================================
+   nojs.css · só é carregado dentro de <noscript> (navegador sem JavaScript).
+   Sem JS não há carrossel: os 3 slides do hero e os 6 depoimentos aparecem
+   empilhados, e os controles que dependem de script somem. As fotos vêm dos
+   <noscript><img> dentro de cada figure. Cabeçalho, menu, rodapé e ícones são
+   montados pelo main.js (arquitetura herdada do site original) e não aparecem.
+   ========================================================================== */
+[data-component="header"]{min-height:0}
+.hero{display:block}
+.hero .slide{opacity:1;visibility:visible}
+.hero .slide + .slide{border-top:1px solid var(--line)}
+.hero .slide .copy,.hero .slide:not(.active) .copy{opacity:1;transform:none}
+.hero .content{padding-bottom:clamp(64px,8vw,112px)}
+.hero-ctrl,.hero-foot,.ts-ctrl,.ts-dots{display:none}
+.testi-slider{display:block}
+.ts-track{gap:var(--s-9)}
+.ts-track .testi{grid-area:auto;opacity:1;visibility:visible;transform:none}
+.btn:empty{display:none}

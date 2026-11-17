@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Blog · Eazy Way Solutions</title>
+<link>https://www.eazywaysolutions.com/blog/</link>
+<description>Guides on certified translation, uncontested divorce, powers of attorney and other documents, written in plain language for families in the U.S.</description>
+<language>en</language>
+<atom:link href="https://www.eazywaysolutions.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>Certified Translation for USCIS: What It Is and What It Must Include</title>
+<link>https://www.eazywaysolutions.com/blog/certified-translation-uscis-requirements/</link>
+<guid>https://www.eazywaysolutions.com/blog/certified-translation-uscis-requirements/</guid>
+<pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+<description>What USCIS expects from a certified translation, how it differs from a notarized or sworn translation, and how to avoid the mistakes that delay a case.</description>
+</item>
+<item>
+<title>Power of Attorney for Brazil: Notarization and Apostille Explained</title>
+<link>https://www.eazywaysolutions.com/blog/power-of-attorney-for-brazil-apostille/</link>
+<guid>https://www.eazywaysolutions.com/blog/power-of-attorney-for-brazil-apostille/</guid>
+<pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+<description>How to sign a power of attorney in the U.S. that will be accepted in Brazil, the two ways to do it, and the steps most people miss.</description>
+</item>
+<item>
+<title>Uncontested Divorce: The Documents to Gather Before You Start</title>
+<link>https://www.eazywaysolutions.com/blog/uncontested-divorce-documents-checklist/</link>
+<guid>https://www.eazywaysolutions.com/blog/uncontested-divorce-documents-checklist/</guid>
+<pubDate>Mon, 05 Oct 2026 00:00:00 GMT</pubDate>
+<description>A plain-language checklist of the information and documents you need for an uncontested divorce, and the points both spouses must agree on first.</description>
+</item>
+</channel>
+</rss>
