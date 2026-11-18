@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eazy Way v2 · Hero 1 (Díptico)</title>
+<style>
+@font-face{font-family:"Newsreader";src:url("fonts/newsreader-var.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("fonts/newsreader-italic-var.woff2") format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:"Libre Franklin";src:url("fonts/libre-franklin-var.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --paper:#FAFAF7; --white:#FFFFFF; --ink:#0F2433; --ink-2:#2B3442; --muted:#57534C; --subtle:#6B665E;
+  --line:#DDD7CB; --gold:#B08D57; --gold-ink:#7A5C2E;
+  --serif:"Newsreader","Iowan Old Style","Times New Roman",serif;
+  --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+  --gutter:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink-2);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.on-ink :focus-visible{outline-color:#fff}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1280px;margin-inline:auto;padding-inline:var(--gutter)}
+@media (min-width:900px){:root{--gutter:40px}}
+
+/* Tipografia: UM display por pagina; o resto fica contido */
+.display,.h2,.h3{font-family:var(--serif);color:var(--ink);font-optical-sizing:auto;text-wrap:balance}
+.display{text-wrap:pretty}
+.h2{font-weight:400;font-size:30px;line-height:1.1;letter-spacing:-.015em}
+.h3{font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-.01em}
+.lead{font-size:17px;line-height:1.6;color:var(--muted);text-wrap:pretty}
+@media (min-width:900px){.h2{font-size:40px}.h3{font-size:26px}.lead{font-size:18px}}
+
+/* Botoes e links: retos, sem seta. Um solido por secao. */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:2px;font:500 15px/1 var(--sans);letter-spacing:.01em;text-decoration:none;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#1c3a4f}
+.btn-line{border:1px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-sm{min-height:40px;padding:0 18px;font-size:14px}
+.link{font:500 15px/1.3 var(--sans);color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--ink);transition:text-decoration-color .2s}
+.link:hover{text-decoration-color:var(--gold)}
+
+/* Assinatura: a triade com ponto mediano dourado */
+.dot{color:var(--gold);font-style:normal}
+.triad{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:12px;top:12px;z-index:10;background:var(--ink);color:#fff;padding:10px 14px}
+.topbar{border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:38px}
+.topbar .tagline{display:none}
+.topbar .items{display:flex;align-items:center;gap:14px;width:100%;justify-content:space-between}
+.t-phones{display:flex;gap:14px}
+.t-phone{text-decoration:none;color:var(--ink);font-weight:500;padding:9px 0}
+.t-phone .num{display:none;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.langs{display:flex;gap:2px}
+.langs button{font:500 12px/1 var(--sans);letter-spacing:.06em;color:var(--subtle);padding:10px 7px;border-bottom:1px solid transparent}
+.langs button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--gold)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;min-height:68px}
+.brand img{height:34px;width:auto}
+.nav,.site-header .btn{display:none}
+.menu-btn{width:44px;height:44px;display:grid;place-content:center;gap:6px;margin-right:-10px}
+.menu-btn i{display:block;width:22px;height:1.5px;background:var(--ink)}
+@media (min-width:900px){
+  .topbar .tagline{display:block}
+  .topbar .items{width:auto;gap:24px}
+  .t-phone .num{display:inline}
+  .site-header .wrap{min-height:84px}
+  .brand img{height:40px}
+  .nav{display:flex;gap:30px;font-size:15px}
+  .nav a{text-decoration:none;color:var(--ink-2);padding:8px 0;border-bottom:1px solid transparent}
+  .nav a:hover{border-bottom-color:var(--line)}
+  .nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--gold)}
+  .site-header .btn{display:inline-flex}
+  .menu-btn{display:none}
+}
+
+.slides{display:grid}
+.slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s .6s}
+.slide.is-active{opacity:1;visibility:visible;transition:opacity .6s ease}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.car{display:flex;align-items:center;gap:18px}
+.car .count{font:400 19px/1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums lining-nums;min-width:3.2em}
+.car .count b{font-weight:400}
+.car .count span{color:var(--subtle)}
+.car button{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:2px;color:var(--ink);transition:border-color .2s}
+.car button:hover{border-color:var(--ink)}
+.car button+button{margin-left:-10px}
+.car svg{width:16px;height:16px}
+@media (prefers-reduced-motion:reduce){.slide,.slide.is-active{transition:none}}
+
+/* HERO 1 · Diptico: as fundadoras sao a imagem; o titulo divide o palco */
+.hero{padding:36px 0 56px}
+.hero .display{font-weight:350;font-size:clamp(40px,11.8vw,46px);line-height:.98;letter-spacing:-.028em}
+.hero .lead{margin-top:20px;max-width:33em}
+.hero .actions{margin-top:28px}
+.hero .car{margin-top:36px}
+.duo{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:56px auto;column-gap:12px;margin-top:48px}
+.duo .f1{grid-column:1;grid-row:1/3}
+.duo .f2{grid-column:2;grid-row:2}
+.duo .triad{grid-column:2;grid-row:1;align-self:end;padding-bottom:14px;font-size:21px;line-height:1}
+.duo img{width:100%;aspect-ratio:2/3;object-fit:cover;background:#CFC6B7}
+.duo figcaption{font:500 13px/1.3 var(--sans);color:var(--ink);padding-top:10px}
+@media (min-width:900px){
+  .hero{padding:64px 0 80px}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) min(44%,540px);column-gap:clamp(40px,6vw,88px);align-items:start}
+  .hero .display{font-size:clamp(54px,5.5vw,79px);line-height:.95;letter-spacing:-.032em}
+  .hero .lead{margin-top:28px}
+  .hero .actions{margin-top:36px}
+  .hero .car{margin-top:56px}
+  .duo{margin-top:0;grid-template-rows:72px auto;column-gap:16px}
+  .duo .triad{font-size:28px;padding-bottom:18px}
+  .duo figcaption{font-size:14px;padding-top:12px}
+}
+
+/* Faixa de credibilidade: tres fatos ligados pelo ponto dourado */
+.cred{border-top:1px solid var(--ink)}
+.cred li{display:grid;grid-template-columns:132px 1fr;align-items:baseline;column-gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.cred .n{font:300 46px/1 var(--serif);color:var(--ink);letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums}
+.cred .n .plus{color:var(--gold-ink)}
+.cred .what{font:500 15px/1.3 var(--sans);color:var(--ink)}
+.cred .who{display:block;font:400 13px/1.4 var(--sans);color:var(--subtle);margin-top:3px}
+@media (min-width:900px){
+  .cred{border-bottom:1px solid var(--line)}
+  .cred ul{display:flex;justify-content:space-between;align-items:center}
+  .cred li{display:flex;align-items:baseline;gap:18px;padding:34px 0;border-bottom:0}
+  .cred .n{font-size:64px}
+  .cred .what{font-size:17px}
+  .cred .who{font-size:14px}
+}
+.cred .sep{display:none}
+@media (min-width:900px){.cred li.sep{display:block;padding:0;font:400 44px/1 var(--serif);color:var(--gold)}}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+<div class="topbar">
+  <div class="wrap">
+    <span class="tagline" data-i18n="topbar">Document preparation, certified translation and interpreters in three languages.</span>
+    <div class="items">
+      <div class="t-phones">
+        <a class="t-phone" href="tel:+14045023653">Vitoria <span class="num">404-502-3653</span></a>
+        <a class="t-phone" href="tel:+18588338923">Natalia <span class="num">858-833-8923</span></a>
+      </div>
+      <div class="langs" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true" title="English" aria-label="English">EN</button>
+        <button type="button" data-lang="pt" aria-pressed="false" title="Português" aria-label="Português">PT</button>
+        <button type="button" data-lang="es" aria-pressed="false" title="Español" aria-label="Español">ES</button>
+      </div>
+    </div>
+  </div>
+</div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="Eazy Way Solutions, home"><img src="img/logo-ews.svg" alt="Eazy Way Solutions" width="133" height="40"></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#" aria-current="page" data-i18n="nav_home">Home</a>
+      <a href="#" data-i18n="nav_about">About</a>
+      <a href="#" data-i18n="nav_services">Services</a>
+      <a href="#" data-i18n="nav_lawfirms">For Law Firms</a>
+      <a href="#">Blog</a>
+      <a href="#" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <a class="btn btn-solid btn-sm" href="#" data-i18n="cta_btn">Free Consultation</a>
+    <button class="menu-btn" type="button" aria-expanded="false"><i></i><i></i><b class="vh" data-i18n="menu_open">Open menu</b></button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" data-carousel aria-roledescription="carousel" aria-label="Highlights">
+  <div class="wrap">
+    <div class="copy">
+      <div class="slides">
+      <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 / 3">
+        <h1 class="display" data-i18n="h_s1_title">Your Documents Prepared With Care, In Your Language.</h1>
+        <p class="lead" data-i18n="h_s1_text">Divorce, name change, power of attorney and marriage agreements, prepared, translated and explained step by step at a flat price.</p>
+        <div class="actions"><a class="btn btn-solid" href="#services/" data-i18n="btn_services">Our Services</a><a class="link" href="#about/" data-i18n="btn_learn">Learn More</a></div>
+      </div>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
+        <h2 class="display" data-i18n="h_s2_title">Certified Translations Accepted Where You Need Them.</h2>
+        <p class="lead" data-i18n="h_s2_text">Birth, marriage and school records translated with a signed statement of accuracy for USCIS, courts and consulates.</p>
+        <div class="actions"><a class="btn btn-solid" href="#services/#translation" data-i18n="btn_translation">Translation Services</a><a class="link" href="#contact/" data-i18n="btn_quote">Request a Quote</a></div>
+      </div>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
+        <h2 class="display" data-i18n="h_s3_title">A Professional Interpreter At Your Side.</h2>
+        <p class="lead" data-i18n="h_s3_text">In-person interpreters for interviews and appointments, and phone interpretation in Portuguese and Spanish nationwide.</p>
+        <div class="actions"><a class="btn btn-solid" href="#services/#interpreters" data-i18n="btn_interp">Book an Interpreter</a><a class="link" href="#contact/" data-i18n="btn_contact">Contact Us</a></div>
+      </div>
+      </div>
+      <div class="car">
+        <p class="count" aria-live="polite"><b data-cur>1</b> <span>/ 3</span></p>
+        <button type="button" data-prev><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10.5 2.5 5 8l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span class="vh" data-i18n="prev">Previous slide</span></button>
+        <button type="button" data-next><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 2.5 11 8l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span class="vh" data-i18n="next">Next slide</span></button>
+      </div>
+    </div>
+    <div class="duo">
+      <figure class="f1"><img src="img/founder-natalia-tall.webp" width="660" height="990" alt="Portrait of Natalia Rosato, Co-Founder and Paralegal"><figcaption>Natalia Rosato</figcaption></figure>
+      <p class="triad" aria-hidden="true">Hello <span class="dot">&middot;</span> Ol&aacute; <span class="dot">&middot;</span> Hola</p>
+      <figure class="f2"><img src="img/founder-vitoria-tall.webp" width="660" height="990" alt="Portrait of Vitoria Oliver, Co-Founder and Paralegal"><figcaption>Vitoria Oliver</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="cred" aria-label="Eazy Way Solutions">
+  <div class="wrap">
+    <ul>
+      <li><span class="n"><span data-count="340">340</span><span class="plus">+</span></span><span class="what"><span data-i18n="cred_cases">cases</span><span class="who">Vitoria Oliver</span></span></li>
+      <li class="sep" aria-hidden="true">&middot;</li>
+      <li><span class="n"><span data-count="6">6</span><span class="plus">+</span></span><span class="what"><span data-i18n="cred_years">years</span><span class="who">Natalia Rosato</span></span></li>
+      <li class="sep" aria-hidden="true">&middot;</li>
+      <li><span class="n"><span data-count="3">3</span></span><span class="what"><span data-i18n="cred_langs">languages</span><span class="who">English, Portugu&ecirc;s, Espa&ntilde;ol</span></span></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<script>
+(function(){
+  var D = {"pt": {"btn_contact": "Fale Conosco", "btn_interp": "Agendar Intérprete", "btn_learn": "Saiba Mais", "btn_quote": "Pedir Orçamento", "btn_services": "Nossos Serviços", "btn_translation": "Serviços de Tradução", "cred_cases": "casos", "cred_langs": "idiomas", "cred_years": "anos", "cta_btn": "Consulta Gratuita", "h_s1_text": "Divórcio, mudança de nome, procuração e pactos matrimoniais, preparados, traduzidos e explicados passo a passo, com preço fechado.", "h_s1_title": "Seus Documentos Preparados Com Cuidado, No Seu Idioma.", "h_s2_text": "Certidões de nascimento, casamento e históricos escolares traduzidos com declaração assinada de fidelidade para USCIS, tribunais e consulados.", "h_s2_title": "Traduções Certificadas Aceitas Onde Você Precisa.", "h_s3_text": "Intérpretes presenciais para entrevistas e compromissos, e interpretação por telefone em português e espanhol em todo o país.", "h_s3_title": "Um Intérprete Profissional Ao Seu Lado.", "menu_open": "Abrir menu", "nav_about": "Sobre", "nav_contact": "Contato", "nav_home": "Início", "nav_lawfirms": "Para Escritórios", "nav_services": "Serviços", "next": "Próximo slide", "prev": "Slide anterior", "skip": "Pular para o conteúdo", "topbar": "Preparação de documentos, tradução certificada e intérpretes em três idiomas."}, "es": {"btn_contact": "Contáctenos", "btn_interp": "Reservar Intérprete", "btn_learn": "Más Información", "btn_quote": "Pedir Cotización", "btn_services": "Nuestros Servicios", "btn_translation": "Servicios de Traducción", "cred_cases": "casos", "cred_langs": "idiomas", "cred_years": "años", "cta_btn": "Consulta Gratuita", "h_s1_text": "Divorcio, cambio de nombre, poder notarial y acuerdos matrimoniales, preparados, traducidos y explicados paso a paso, con precio fijo.", "h_s1_title": "Sus Documentos Preparados Con Cuidado, En Su Idioma.", "h_s2_text": "Actas de nacimiento, matrimonio y registros escolares traducidos con declaración firmada de exactitud para USCIS, tribunales y consulados.", "h_s2_title": "Traducciones Certificadas Aceptadas Donde Las Necesita.", "h_s3_text": "Intérpretes en persona para entrevistas y citas, e interpretación telefónica en portugués y español en todo el país.", "h_s3_title": "Un Intérprete Profesional A Su Lado.", "menu_open": "Abrir menú", "nav_about": "Nosotros", "nav_contact": "Contacto", "nav_home": "Inicio", "nav_lawfirms": "Para Bufetes", "nav_services": "Servicios", "next": "Siguiente diapositiva", "prev": "Diapositiva anterior", "skip": "Saltar al contenido", "topbar": "Preparación de documentos, traducción certificada e intérpretes en tres idiomas."}};
+  var qs = new URLSearchParams(location.search);
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ if(!(el.dataset.i18n in EN)) EN[el.dataset.i18n] = el.innerHTML; });
+  function tr(lang, key){ return lang === 'en' ? EN[key] : (D[lang] && D[lang][key]) || EN[key]; }
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ var v = tr(lang, el.dataset.i18n); if(v != null) el.innerHTML = v; });
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    /* nome do servico nos outros dois idiomas */
+    document.querySelectorAll('[data-also]').forEach(function(el){
+      var others = ['en','pt','es'].filter(function(l){ return l !== lang; });
+      var seen = {}; seen[tr(lang, el.dataset.also)] = 1; el.innerHTML = others.filter(function(l){ var v = tr(l, el.dataset.also); if(seen[v]) return false; seen[v] = 1; return true; }).map(function(l){ return '<span lang="'+l+'">'+tr(l, el.dataset.also)+'</span>'; }).join(' <span class="dot">·</span> ');
+    });
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  setLang(qs.get('lang') || 'en');
+
+  /* Carrossel: 3 slides, troca manual nesta demonstracao (?slide=2 abre no segundo) */
+  var car = document.querySelector('[data-carousel]');
+  if(car){
+    var slides = [].slice.call(car.querySelectorAll('.slide')), i = 0;
+    function go(n){
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); s.setAttribute('aria-hidden', String(k !== i)); if(k !== i) s.setAttribute('inert',''); else s.removeAttribute('inert'); });
+      car.querySelectorAll('[data-cur]').forEach(function(c){ c.textContent = i + 1; });
+    }
+    car.querySelectorAll('[data-prev]').forEach(function(b){ b.addEventListener('click', function(){ go(i - 1); }); });
+    car.querySelectorAll('[data-next]').forEach(function(b){ b.addEventListener('click', function(){ go(i + 1); }); });
+    car.addEventListener('keydown', function(e){ if(e.key === 'ArrowLeft') go(i - 1); if(e.key === 'ArrowRight') go(i + 1); });
+    go((parseInt(qs.get('slide'), 10) || 1) - 1);
+  }
+
+  /* Numeros: contam uma vez ao entrar na tela; sem movimento se o usuario pediu menos movimento */
+  var nums = [].slice.call(document.querySelectorAll('[data-count]'));
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches || qs.has('still');
+  if(nums.length && !still && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return; io.unobserve(e.target);
+        var el = e.target, end = +el.dataset.count, t0 = null, dur = 1100;
+        el.style.display = 'inline-block'; el.style.minWidth = el.offsetWidth + 'px';
+        function step(t){ if(!t0) t0 = t; var p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if(p < 1) requestAnimationFrame(step); }
+        el.textContent = '0'; requestAnimationFrame(step);
+      });
+    }, {threshold:.6});
+    nums.forEach(function(n){ io.observe(n); });
+  }
+})();
+</script>
+</body>
+</html>

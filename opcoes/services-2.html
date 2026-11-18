@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Eazy Way v2 · Services 2 (Índice em três línguas)</title>
+<style>
+@font-face{font-family:"Newsreader";src:url("fonts/newsreader-var.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("fonts/newsreader-italic-var.woff2") format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
+@font-face{font-family:"Libre Franklin";src:url("fonts/libre-franklin-var.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+:root{
+  --paper:#FAFAF7; --white:#FFFFFF; --ink:#0F2433; --ink-2:#2B3442; --muted:#57534C; --subtle:#6B665E;
+  --line:#DDD7CB; --gold:#B08D57; --gold-ink:#7A5C2E;
+  --serif:"Newsreader","Iowan Old Style","Times New Roman",serif;
+  --sans:"Libre Franklin","Helvetica Neue",Arial,sans-serif;
+  --gutter:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink-2);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.on-ink :focus-visible{outline-color:#fff}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1280px;margin-inline:auto;padding-inline:var(--gutter)}
+@media (min-width:900px){:root{--gutter:40px}}
+
+/* Tipografia: UM display por pagina; o resto fica contido */
+.display,.h2,.h3{font-family:var(--serif);color:var(--ink);font-optical-sizing:auto;text-wrap:balance}
+.display{text-wrap:pretty}
+.h2{font-weight:400;font-size:30px;line-height:1.1;letter-spacing:-.015em}
+.h3{font-weight:400;font-size:23px;line-height:1.15;letter-spacing:-.01em}
+.lead{font-size:17px;line-height:1.6;color:var(--muted);text-wrap:pretty}
+@media (min-width:900px){.h2{font-size:40px}.h3{font-size:26px}.lead{font-size:18px}}
+
+/* Botoes e links: retos, sem seta. Um solido por secao. */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:2px;font:500 15px/1 var(--sans);letter-spacing:.01em;text-decoration:none;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s}
+.btn-solid{background:var(--ink);color:#fff}
+.btn-solid:hover{background:#1c3a4f}
+.btn-line{border:1px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-sm{min-height:40px;padding:0 18px;font-size:14px}
+.link{font:500 15px/1.3 var(--sans);color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--ink);transition:text-decoration-color .2s}
+.link:hover{text-decoration-color:var(--gold)}
+
+/* Assinatura: a triade com ponto mediano dourado */
+.dot{color:var(--gold);font-style:normal}
+.triad{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+
+/* Trechos das secoes vizinhas (so para julgar o ritmo; cortados de proposito) */
+.peek{overflow:hidden;position:relative}
+.peek-prev{height:230px;display:flex;align-items:flex-end;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 70%);mask-image:linear-gradient(to bottom,transparent 0,#000 70%)}
+.peek-prev>*{width:100%}
+.peek-next{height:452px}
+@media (min-width:900px){.peek-prev{height:300px}.peek-next{height:436px}}
+
+/* Intro (secao anterior): duas colunas de texto, sem foto; as fundadoras ja estao no hero */
+.intro{padding:0 0 64px}
+.intro .h2{max-width:13em}
+.intro .txt{margin-top:24px}
+.intro .txt p+p{margin-top:16px}
+.intro .foot{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-top:28px}
+.intro .names{font:500 14px/1.3 var(--sans);color:var(--ink)}
+@media (min-width:900px){
+  .intro{padding-bottom:120px}
+  .intro .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+  .intro .h2{grid-column:1/6}
+  .intro .txt{grid-column:7/-1;margin-top:6px}
+  .intro .foot{margin-top:36px}
+}
+
+/* For Law Firms (secao seguinte): o unico bloco de largura total em tinta */
+.lf{background:var(--ink);color:#D9DEE2;padding:64px 0}
+.lf .tag{font:500 14px/1 var(--sans);color:#D2B37E}
+.lf .h2{color:#fff;margin-top:18px;max-width:14em}
+.lf .lead{color:#C5CCD2;margin-top:18px;max-width:34em}
+.lf dl{margin-top:40px;border-top:1px solid rgba(255,255,255,.22)}
+.lf .row{padding:20px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.lf dt{font:400 21px/1.2 var(--serif);color:#fff}
+.lf dd{margin-top:6px;font-size:15px;color:#C5CCD2}
+@media (min-width:900px){
+  .lf{padding:120px 0}
+  .lf .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+  .lf .head{grid-column:1/6}
+  .lf dl{grid-column:7/-1;margin-top:0}
+  .lf .row{display:grid;grid-template-columns:5fr 6fr;column-gap:24px;padding:22px 0}
+  .lf dt{font-size:22px}
+  .lf dd{margin-top:2px}
+}
+
+/* SERVICOS 2 · Indice em tres linguas: cada servico dito nos tres idiomas, colunas em degrau */
+.svc{padding:64px 0 72px;background:var(--white);border-top:1px solid var(--line)}
+.svc .head{display:flex;flex-direction:column;align-items:flex-start;gap:22px}
+.svc .cols{margin-top:36px}
+.svc article{position:relative;padding:26px 0 30px;border-top:1px solid var(--line)}
+.svc article:first-child{border-top-color:var(--ink)}
+.svc .also{font:italic 300 17px/1.3 var(--serif);color:var(--gold-ink);text-wrap:balance}
+.svc .h3{font-size:34px;line-height:1.02;letter-spacing:-.025em;font-weight:350;margin-top:8px}
+.svc article p{margin-top:14px;color:var(--muted);max-width:34em}
+.svc article .link{display:inline-block;margin-top:18px}
+.svc article .link::after{content:"";position:absolute;inset:0}
+@media (min-width:900px){
+  .svc{padding:128px 0 150px}
+  .svc .head{flex-direction:row;align-items:flex-end;justify-content:space-between}
+  .svc .cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:64px;border-top:1px solid var(--ink)}
+  .svc article{border-top:0;padding:0 32px 0 32px;border-left:1px solid var(--line);display:flex;flex-direction:column}
+  .svc article:first-child{padding-left:0;border-left:0}
+  .svc article:last-child{padding-right:0}
+  .svc article:nth-child(1){padding-top:40px}
+  .svc article:nth-child(2){padding-top:112px}
+  .svc article:nth-child(3){padding-top:184px}
+  .svc .h3{font-size:clamp(38px,3.6vw,50px);margin-top:12px}
+  .svc .also{font-size:18px}
+  .svc article p{margin-top:20px;font-size:16px}
+  .svc article .link{margin-top:24px;align-self:flex-start}
+}
+</style>
+</head>
+<body>
+
+<div class="peek peek-prev" aria-hidden="true">
+<section class="intro">
+  <div class="wrap">
+    <h2 class="h2" data-i18n="h_intro_title">Paperwork done right the first time, explained in plain words.</h2>
+    <div class="txt">
+      <p class="lead" data-i18n="h_intro_p1">We are a document preparation company serving families, couples and professionals who live between languages. We complete, format and translate the documents you need, and we review every page with you before you sign or file.</p>
+      <p class="lead" data-i18n="h_intro_p2">Every case starts with a free review. You know the price and the timeline before you commit, and one person follows your case from the first call to the final copy.</p>
+      <div class="foot"><a class="link" href="#about/" tabindex="-1" data-i18n="btn_about">More About Us</a><p class="names">Natalia Rosato <span class="dot">&middot;</span> Vitoria Oliver</p></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<main id="main">
+<section class="svc">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="h2" data-i18n="h_main_title">Our core services</h2>
+      <a class="btn btn-line" href="#services/" data-i18n="btn_all">All Services</a>
+    </div>
+    <div class="cols">
+      <article><p class="also" aria-hidden="true" data-also="c1_title"></p><h3 class="h3" data-i18n="c1_title">Family Documents</h3><p data-i18n="c1_text">Uncontested divorce, name change and prenuptial or postnuptial agreements, prepared for your state and ready to file.</p><a class="link" href="#services/#divorce" data-i18n="read_more">Read More</a></article>
+      <article><p class="also" aria-hidden="true" data-also="c2_title"></p><h3 class="h3" data-i18n="c2_title">Certified Translation</h3><p data-i18n="c2_text">Certificates, records and legal documents translated between English, Portuguese and Spanish with a signed statement of accuracy.</p><a class="link" href="#services/#translation" data-i18n="read_more">Read More</a></article>
+      <article><p class="also" aria-hidden="true" data-also="c3_title"></p><h3 class="h3" data-i18n="c3_title">Interpreters</h3><p data-i18n="c3_text">In-person interpreters in Georgia, Alabama and Colorado, and phone interpretation in Portuguese and Spanish.</p><a class="link" href="#services/#interpreters" data-i18n="read_more">Read More</a></article>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="peek peek-next" aria-hidden="true">
+<section class="lf on-ink">
+  <div class="wrap">
+    <div class="head">
+      <p class="tag" data-i18n="lf_tag">For Law Firms</p>
+      <h2 class="h2" data-i18n="lf_title">Language and document support for your practice.</h2>
+      <p class="lead" data-i18n="lf_text">We work alongside attorneys and paralegals who serve Portuguese and Spanish speaking clients. You direct the work and we deliver it on your deadline.</p>
+    </div>
+    <dl>
+      <div class="row"><dt data-i18n="lf6_t">Case management</dt><dd data-i18n="lf6_d">Documents, deadlines and case files kept organized for your team while the case moves forward.</dd></div>
+      <div class="row"><dt data-i18n="lf1_t">Certified translations for case files</dt><dd data-i18n="lf1_d">Certificates, records and evidence translated between English, Portuguese and Spanish, with a signed statement of accuracy.</dd></div>
+      <div class="row"><dt data-i18n="lf2_t">Interpreters for client meetings</dt><dd data-i18n="lf2_d">In person for interviews and appointments in Georgia, Alabama and Colorado, and by phone nationwide.</dd></div>
+      <div class="row"><dt data-i18n="lf3_t">FBI and FOIA record requests</dt><dd data-i18n="lf3_d">FBI Identity History Summary requests and FOIA requests to the FBI and CBP, tracked until the records arrive.</dd></div>
+    </dl>
+  </div>
+</section>
+</div>
+
+<script>
+(function(){
+  var D = {"pt": {"btn_about": "Mais Sobre Nós", "btn_all": "Todos os Serviços", "c1_text": "Divórcio consensual, mudança de nome e pactos pré ou pós-nupciais, preparados para o seu estado e prontos para protocolo.", "c1_title": "Documentos de Família", "c2_text": "Certidões, históricos e documentos jurídicos traduzidos entre inglês, português e espanhol com declaração assinada de fidelidade.", "c2_title": "Tradução Certificada", "c3_text": "Intérpretes presenciais na Georgia, Alabama e Colorado, e interpretação por telefone em português e espanhol.", "c3_title": "Intérpretes", "h_intro_p1": "Somos uma empresa de preparação de documentos que atende famílias, casais e profissionais que vivem entre idiomas. Preenchemos, formatamos e traduzimos os documentos que você precisa e revisamos cada página com você antes da assinatura ou do protocolo.", "h_intro_p2": "Todo caso começa com uma análise gratuita. Você sabe o preço e o prazo antes de fechar, e uma mesma pessoa acompanha o seu caso do primeiro contato até a cópia final.", "h_intro_title": "Documentos certos da primeira vez, explicados em palavras simples.", "h_main_title": "Nossos principais serviços", "lf1_d": "Certidões, registros e provas traduzidos entre inglês, português e espanhol, com declaração assinada de fidelidade.", "lf1_t": "Traduções certificadas para processos", "lf2_d": "Presenciais para entrevistas e compromissos na Georgia, Alabama e Colorado, e por telefone em todo o país.", "lf2_t": "Intérpretes para reuniões com clientes", "lf3_d": "Pedidos do FBI Identity History Summary e pedidos FOIA ao FBI e ao CBP, acompanhados até a chegada dos registros.", "lf3_t": "Pedidos de registros ao FBI e FOIA", "lf6_d": "Documentos, prazos e pastas dos casos organizados para a sua equipe enquanto o caso avança.", "lf6_t": "Case management", "lf_tag": "Para Escritórios de Advocacia", "lf_text": "Trabalhamos ao lado de advogados e paralegais que atendem clientes de língua portuguesa e espanhola. Você orienta o trabalho e nós entregamos no seu prazo.", "lf_title": "Suporte de idiomas e documentos para o seu escritório.", "read_more": "Saiba Mais"}, "es": {"btn_about": "Más Sobre Nosotros", "btn_all": "Todos los Servicios", "c1_text": "Divorcio de mutuo acuerdo, cambio de nombre y acuerdos prenupciales o posnupciales, preparados para su estado y listos para presentar.", "c1_title": "Documentos Familiares", "c2_text": "Actas, registros y documentos legales traducidos entre inglés, portugués y español con declaración firmada de exactitud.", "c2_title": "Traducción Certificada", "c3_text": "Intérpretes en persona en Georgia, Alabama y Colorado, e interpretación telefónica en portugués y español.", "c3_title": "Intérpretes", "h_intro_p1": "Somos una empresa de preparación de documentos que atiende a familias, parejas y profesionales que viven entre idiomas. Completamos, damos formato y traducimos los documentos que necesita, y revisamos cada página con usted antes de firmar o presentar.", "h_intro_p2": "Cada caso comienza con una revisión gratuita. Conoce el precio y el plazo antes de decidir, y una misma persona acompaña su caso desde la primera llamada hasta la copia final.", "h_intro_title": "Trámites bien hechos desde el principio, explicados con palabras sencillas.", "h_main_title": "Nuestros servicios principales", "lf1_d": "Actas, registros y pruebas traducidos entre inglés, portugués y español, con declaración firmada de exactitud.", "lf1_t": "Traducciones certificadas para expedientes", "lf2_d": "En persona para entrevistas y citas en Georgia, Alabama y Colorado, y por teléfono en todo el país.", "lf2_t": "Intérpretes para reuniones con clientes", "lf3_d": "Solicitudes del FBI Identity History Summary y pedidos FOIA al FBI y a CBP, con seguimiento hasta que lleguen los registros.", "lf3_t": "Solicitudes de registros al FBI y FOIA", "lf6_d": "Documentos, plazos y expedientes organizados para su equipo mientras el caso avanza.", "lf6_t": "Gestión de casos", "lf_tag": "Para Bufetes de Abogados", "lf_text": "Trabajamos junto a abogados y paralegales que atienden a clientes de habla portuguesa e hispana. Usted dirige el trabajo y nosotros lo entregamos en su plazo.", "lf_title": "Apoyo de idiomas y documentos para su bufete.", "read_more": "Ver Más"}};
+  var qs = new URLSearchParams(location.search);
+  var EN = {};
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ if(!(el.dataset.i18n in EN)) EN[el.dataset.i18n] = el.innerHTML; });
+  function tr(lang, key){ return lang === 'en' ? EN[key] : (D[lang] && D[lang][key]) || EN[key]; }
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ var v = tr(lang, el.dataset.i18n); if(v != null) el.innerHTML = v; });
+    document.querySelectorAll('[data-lang]').forEach(function(b){ b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+    /* nome do servico nos outros dois idiomas */
+    document.querySelectorAll('[data-also]').forEach(function(el){
+      var others = ['en','pt','es'].filter(function(l){ return l !== lang; });
+      var seen = {}; seen[tr(lang, el.dataset.also)] = 1; el.innerHTML = others.filter(function(l){ var v = tr(l, el.dataset.also); if(seen[v]) return false; seen[v] = 1; return true; }).map(function(l){ return '<span lang="'+l+'">'+tr(l, el.dataset.also)+'</span>'; }).join(' <span class="dot">·</span> ');
+    });
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+  setLang(qs.get('lang') || 'en');
+
+  /* Carrossel: 3 slides, troca manual nesta demonstracao (?slide=2 abre no segundo) */
+  var car = document.querySelector('[data-carousel]');
+  if(car){
+    var slides = [].slice.call(car.querySelectorAll('.slide')), i = 0;
+    function go(n){
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); s.setAttribute('aria-hidden', String(k !== i)); if(k !== i) s.setAttribute('inert',''); else s.removeAttribute('inert'); });
+      car.querySelectorAll('[data-cur]').forEach(function(c){ c.textContent = i + 1; });
+    }
+    car.querySelectorAll('[data-prev]').forEach(function(b){ b.addEventListener('click', function(){ go(i - 1); }); });
+    car.querySelectorAll('[data-next]').forEach(function(b){ b.addEventListener('click', function(){ go(i + 1); }); });
+    car.addEventListener('keydown', function(e){ if(e.key === 'ArrowLeft') go(i - 1); if(e.key === 'ArrowRight') go(i + 1); });
+    go((parseInt(qs.get('slide'), 10) || 1) - 1);
+  }
+
+  /* Numeros: contam uma vez ao entrar na tela; sem movimento se o usuario pediu menos movimento */
+  var nums = [].slice.call(document.querySelectorAll('[data-count]'));
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches || qs.has('still');
+  if(nums.length && !still && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return; io.unobserve(e.target);
+        var el = e.target, end = +el.dataset.count, t0 = null, dur = 1100;
+        el.style.display = 'inline-block'; el.style.minWidth = el.offsetWidth + 'px';
+        function step(t){ if(!t0) t0 = t; var p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if(p < 1) requestAnimationFrame(step); }
+        el.textContent = '0'; requestAnimationFrame(step);
+      });
+    }, {threshold:.6});
+    nums.forEach(function(n){ io.observe(n); });
+  }
+})();
+</script>
+</body>
+</html>
