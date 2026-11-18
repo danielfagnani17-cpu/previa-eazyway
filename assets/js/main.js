@@ -120,13 +120,14 @@
   /* ---------- Componente: CTA final (tipográfico; o monograma vem do CSS) ---------- */
   function renderCTA(el) {
     el.outerHTML = `
-<section class="cta" aria-labelledby="cta-title">
+<section class="cta on-ink" aria-labelledby="cta-title">
+  <img class="cta-bg" src="${esc(asset("assets/img/texture-pen.webp"))}" srcset="${esc(asset("assets/img/texture-pen-800.webp"))} 800w, ${esc(asset("assets/img/texture-pen.webp"))} 1400w" sizes="100vw" width="1400" height="868" alt="" aria-hidden="true" loading="lazy" decoding="async">
   <div class="wrap">
     ${TRIAD}
     <h2 class="h2" id="cta-title" data-i18n="cta_title">Not sure which document you need? Talk to our team at no cost.</h2>
     <p class="lead" data-i18n="cta_text">Tell us about your situation and we will explain the options, the price and the timeline before you decide.</p>
     <div class="actions">
-      <a class="btn btn-solid" href="${R}contact/">${t("cta_btn2", "Request a Quote")}</a>
+      <a class="btn btn-white" href="${R}contact/">${t("cta_btn2", "Request a Quote")}</a>
       ${callBtns("link tel")}
     </div>
   </div>

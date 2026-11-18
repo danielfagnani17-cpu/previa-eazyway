@@ -33,6 +33,7 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-var.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/libre-franklin-var.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-italic-var.woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" href="assets/img/founder-natalia-tall.webp" imagesrcset="assets/img/founder-natalia-tall-440.webp 440w, assets/img/founder-natalia-tall.webp 660w" imagesizes="(min-width:1024px) 240px, (min-width:720px) 20vw, 45vw">
 <link rel="stylesheet" href="assets/css/style.css">
 <noscript><link rel="stylesheet" href="assets/css/nojs.css"></noscript>
 <script type="application/ld+json">
@@ -77,18 +78,16 @@
         <button type="button" data-next><svg viewBox="0 0 28 12" aria-hidden="true"><path d="M1 6h26m-5-5 5 5-5 5" fill="none" stroke="currentColor"/></svg><span class="visually-hidden" data-i18n="next">Next slide</span></button>
       </div>
     </div>
-    <div class="byline">
+    <div class="duo">
       <p class="triad" aria-hidden="true">Hello <span class="dot">&middot;</span> Ol&aacute; <span class="dot">&middot;</span> Hola</p>
-      <div class="people">
-        <figure><img src="assets/img/founder-natalia-close.webp" srcset="assets/img/founder-natalia-close-360.webp 360w, assets/img/founder-natalia-close.webp 700w" sizes="(min-width:900px) 184px, 78px" width="700" height="875" alt="Portrait of Natalia Rosato, Co-Founder and Paralegal" decoding="async"><figcaption aria-hidden="true">Natalia Rosato</figcaption></figure>
-        <figure><img src="assets/img/founder-vitoria-close.webp" srcset="assets/img/founder-vitoria-close-360.webp 360w, assets/img/founder-vitoria-close.webp 700w" sizes="(min-width:900px) 184px, 78px" width="700" height="875" alt="Portrait of Vitoria Oliver, Co-Founder and Paralegal" decoding="async"><figcaption aria-hidden="true">Vitoria Oliver</figcaption></figure>
-      </div>
+      <figure class="f1"><img src="assets/img/founder-natalia-tall.webp" srcset="assets/img/founder-natalia-tall-440.webp 440w, assets/img/founder-natalia-tall.webp 660w" sizes="(min-width:1024px) 240px, (min-width:720px) 20vw, 45vw" width="660" height="990" alt="Portrait of Natalia Rosato, Co-Founder and Paralegal" decoding="async" fetchpriority="high"><figcaption aria-hidden="true">Natalia Rosato</figcaption></figure>
+      <figure class="f2"><img src="assets/img/founder-vitoria-tall.webp" srcset="assets/img/founder-vitoria-tall-440.webp 440w, assets/img/founder-vitoria-tall.webp 660w" sizes="(min-width:1024px) 240px, (min-width:720px) 20vw, 45vw" width="660" height="990" alt="Portrait of Vitoria Oliver, Co-Founder and Paralegal" decoding="async" fetchpriority="high"><figcaption aria-hidden="true">Vitoria Oliver</figcaption></figure>
     </div>
   </div>
 </section>
 
 <!-- FATOS · cada número leva o nome de quem ele pertence ================================== -->
-<section class="cred" aria-label="Eazy Way Solutions">
+<section class="cred on-ink" aria-label="Eazy Way Solutions">
   <div class="wrap">
     <ul>
       <li><span class="fact-n"><span class="visually-hidden">340+</span><span aria-hidden="true"><span data-count="340">340</span><span class="plus">+</span></span></span><span class="fact-what"><span data-i18n="cred_cases">cases</span><span class="fact-who">Vitoria Oliver</span></span></li>
@@ -110,6 +109,7 @@
       <div class="foot-line"><a class="link tap" href="about/" data-i18n="btn_about">More About Us</a><p class="names"><span>Natalia Rosato</span><span class="dot" aria-hidden="true">&middot;</span><span>Vitoria Oliver</span></p></div>
     </div>
   </div>
+  <figure class="band-photo"><img src="assets/img/texture-signing.webp" srcset="assets/img/texture-signing-800.webp 800w, assets/img/texture-signing.webp 1400w" sizes="100vw" width="1400" height="643" alt="Hands signing a printed document with a pen" loading="lazy" decoding="async"></figure>
 </section>
 
 <!-- SERVIÇOS · lista numerada, na mesma ordem 1, 2, 3 dos slides ========================= -->
@@ -128,7 +128,7 @@
 </section>
 
 <!-- FOR LAW FIRMS · a única faixa de largura total em tinta ============================== -->
-<section class="lf lf-home on-ink" id="law-firms" aria-labelledby="lf-title">
+<section class="lf lf-home" id="law-firms" aria-labelledby="lf-title">
   <div class="wrap cols">
     <div class="head">
       <p class="tag" data-i18n="lf_tag">For Law Firms</p>
@@ -145,7 +145,7 @@
       <li><h3 class="h3" data-i18n="lf5_t">Documents for use in Brazil</h3><p data-i18n="lf5_d">Powers of attorney, marriage registration with the Brazilian consulate and the apostille steps.</p></li>
     </ul>
     </div>
-    <div class="ask"><h3 class="h3" data-i18n="lf_cta_t">Have a case that needs support?</h3><a class="btn btn-white" href="law-firms/" data-i18n="lf_more">Learn More</a></div>
+    <div class="ask"><h3 class="h3" data-i18n="lf_cta_t">Have a case that needs support?</h3><a class="btn btn-solid" href="law-firms/" data-i18n="lf_more">Learn More</a></div>
   </div>
 </section>
 
@@ -183,7 +183,7 @@
 </section>
 
 <!-- ÍNDICE · os oito serviços como sumário =============================================== -->
-<section class="index">
+<section class="index on-ink">
   <div class="wrap cols">
     <h2 class="h2" data-i18n="h_grid_title">Everything on your paperwork list, in one place.</h2>
     <p class="lead" data-i18n="h_grid_text">Choose a service to see what it includes and what you will need to get started.</p>

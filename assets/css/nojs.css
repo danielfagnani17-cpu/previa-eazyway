@@ -6,13 +6,13 @@
    legal (.nojs-footer, no fim de cada página).
    ========================================================================== */
 [data-component="header"]{min-height:0}
-.slides{display:block}
-.slide{opacity:1;visibility:visible}
-.slide + .slide{margin-top:40px;padding-top:40px;border-top:1px solid var(--line)}
+.hero .wrap{display:block}
+.slides,.slide{display:block}
+.slide .display,.slide .body{opacity:1;visibility:visible}
+.slide + .slide{margin-top:36px;padding-top:36px;border-top:1px solid var(--line)}
 .hero .slide .display{font-size:var(--fs-2xl);line-height:1}
-.hero .body{min-height:0;max-width:none}
 .car{display:none}
-.byline{grid-row:auto;margin-top:40px}
+.duo{margin-top:36px;max-width:420px}
 .reach a:empty,.c-list:empty{display:none}
 .c-list{min-height:0}
 .nojs-footer{background:var(--white);border-top:1px solid var(--ink);padding:40px 0;font-size:var(--fs-small);color:var(--muted)}

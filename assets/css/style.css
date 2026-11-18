@@ -14,7 +14,7 @@
    Tamanhos de fonte: só os tokens --fs-* (11 no total).
    ========================================================================== */
 
-@font-face{font-family:"Newsreader";src:url("../fonts/newsreader-var.woff2") format("woff2");font-weight:200 400;font-style:normal;font-display:swap}
+@font-face{font-family:"Newsreader";src:url("../fonts/newsreader-var.woff2") format("woff2");font-weight:200 500;font-style:normal;font-display:swap}
 @font-face{font-family:"Newsreader";src:url("../fonts/newsreader-italic-var.woff2") format("woff2");font-weight:300;font-style:italic;font-display:swap}
 @font-face{font-family:"Libre Franklin";src:url("../fonts/libre-franklin-var.woff2") format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
 /* Arquivos gerados por audit/scripts/v2-subset-fonts.py (subset latino, eixos reduzidos ao que o CSS usa) */
@@ -24,16 +24,16 @@
 
 :root{
   --paper:#FAFAF7; --white:#FFFFFF; --ink:#0F2433; --ink-hover:#1C3A4F; --ink-2:#2B3442;
-  --muted:#57534C; --subtle:#6B665E; --line:#DDD7CB; --field-line:#8E877B;
+  --muted:#4A463F; --subtle:#6B665E; --line:#DDD7CB; --field-line:#8E877B;
   --gold:#B08D57; --gold-ink:#7A5C2E; --danger:#A3271F; --wa-ink:#12703A;
-  --on-ink:#C5CCD2; --on-ink-gold:#D2B37E; --on-ink-line:rgba(255,255,255,.16);
+  --sand:#EDE3D0; --on-ink:#C5CCD2; --on-ink-gold:#D9BC88; --on-ink-line:rgba(255,255,255,.16);
   --serif:"Newsreader","Newsreader Fallback","Iowan Old Style","Times New Roman",serif;
   --sans:"Libre Franklin","Franklin Fallback","Helvetica Neue",Arial,sans-serif;
   --gutter:20px; --wrap:1280px; --col-gap:24px;
   --sec:64px; --topbar-h:44px; --header-h:68px;
   --ease:cubic-bezier(.22,1,.36,1);
   /* escala tipográfica: 11 tamanhos */
-  --fs-display:clamp(42px,12.3vw,48px);     /* display da Home */
+  --fs-display:clamp(34px,10.4vw,42px);     /* display da Home (divide a primeira tela com os retratos) */
   --fs-display-2:clamp(50px,15vw,64px);     /* display das páginas internas e numeral gigante do celular */
   --fs-fact:46px;                           /* numerais da faixa de fatos */
   --fs-2xl:34px;                            /* citações, valores, motivo trilíngue grande */
@@ -47,7 +47,7 @@
 }
 @media (min-width:720px){:root{
   --gutter:40px; --sec:96px; --topbar-h:39px; --header-h:84px;
-  --fs-display:clamp(72px,9.2vw,132px);
+  --fs-display:clamp(44px,5.7vw,82px);
   --fs-display-2:clamp(76px,10.4vw,150px);
   --fs-fact:clamp(46px,4.5vw,64px);
   --fs-2xl:clamp(40px,3.9vw,56px);
@@ -83,13 +83,13 @@ svg{flex:none}
 [data-component="header"]{display:block;min-height:calc(var(--topbar-h) + var(--header-h) + 1px)}
 
 /* ---------- Tipografia: UM display por página; o resto fica contido ---------- */
-.display,.h2,.h3{font-family:var(--serif);font-weight:400;color:var(--ink);font-optical-sizing:auto;text-wrap:balance}
-.display{font-weight:300;font-size:var(--fs-display);line-height:.94;letter-spacing:-.035em;text-wrap:pretty}
+.display,.h2,.h3{font-family:var(--serif);font-weight:500;color:var(--ink);font-optical-sizing:auto;text-wrap:balance}
+.display{font-size:var(--fs-display);line-height:.98;letter-spacing:-.03em;text-wrap:pretty}
 .h2{font-size:var(--fs-h2);line-height:1.1;letter-spacing:-.015em}
 .h3{font-size:var(--fs-h3);line-height:1.15;letter-spacing:-.01em}
-.lead{font-size:var(--fs-lead);line-height:1.6;color:var(--muted);text-wrap:pretty;max-width:38em}
+.lead{font-size:var(--fs-lead);line-height:1.6;color:var(--ink-2);text-wrap:pretty;max-width:38em}
 p{text-wrap:pretty}
-@media (min-width:720px){.display{line-height:.9;letter-spacing:-.04em;text-wrap:balance}}
+@media (min-width:720px){.display,.h2,.h3{font-weight:400}.display{line-height:.94;letter-spacing:-.035em;text-wrap:balance}}
 /* Assinatura: a tríade com ponto mediano dourado */
 .dot{color:var(--gold);font-style:normal}
 .triad{font-family:var(--serif);font-style:italic;font-weight:300;color:var(--ink);letter-spacing:-.01em;line-height:1;white-space:nowrap}
@@ -212,19 +212,24 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
    HOME
    ========================================================================== */
 
-/* ---------- Hero · Cartaz: o título é a imagem; as fundadoras assinam embaixo ----------
-   Celular: os três slides ocupam a mesma célula (trocar de slide não move nada abaixo); o contador e as
-   setas vêm depois dos botões, na linha que abre o bloco dos retratos. */
-.hero{padding:28px 0 48px}
-.hero .wrap{display:flex;flex-direction:column}
-.slides{display:grid}
-.slide{grid-area:1/1;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s .6s}
-.slide.is-active{opacity:1;visibility:visible;transition:opacity .6s ease}
-.hero .body{padding-top:24px}
+/* ---------- Hero: título e fundadoras dividem a primeira tela ----------
+   .slides e .slide são display:contents: os três títulos ocupam a mesma célula e os três textos outra,
+   com os retratos entre eles no celular. Trocar de slide não move nada. */
+.hero{padding:20px 0 44px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr)}
+.slides,.slide{display:contents}
+.slide .display,.slide .body{grid-column:1;opacity:0;visibility:hidden;transition:opacity .6s ease,visibility 0s .6s}
+.slide.is-active .display,.slide.is-active .body{opacity:1;visibility:visible;transition:opacity .6s ease}
+.slide .display{grid-row:1;align-self:end}
+.slide .body{grid-row:3;padding-top:22px}
 .hero .lead{max-width:31em}
-.hero .actions{margin-top:26px;gap:14px 20px}
+.hero .actions{margin-top:22px;gap:14px 20px}
 .hero .actions .btn{padding-inline:18px}
-.car{display:flex;align-items:center;justify-content:space-between;margin-top:36px;padding-top:8px;border-top:1px solid var(--line)}
+.duo{grid-row:2;display:grid;grid-template-columns:1fr 1fr;gap:10px 12px;margin-top:16px}
+.duo .triad{grid-column:1/-1;font-size:var(--fs-h3l)}
+.duo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 12%;background:#CFC6B7}
+.duo figcaption{padding-top:8px;font:500 var(--fs-small)/1.3 var(--sans);color:var(--ink)}
+.car{grid-row:4;display:flex;align-items:center;justify-content:space-between;margin-top:28px;padding-top:6px;border-top:1px solid var(--line)}
 .car .count{font:400 var(--fs-lead)/1 var(--serif);color:var(--ink);font-variant-numeric:tabular-nums lining-nums;min-width:3.2em}
 .car .count b{font-weight:400}
 .car .count span{color:var(--subtle)}
@@ -232,62 +237,61 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
 .car button{width:44px;height:44px;display:grid;place-items:center;color:var(--ink);transition:color .2s}
 .car button:hover{color:var(--gold-ink)}
 .car svg{width:28px;height:12px}
-.byline{margin-top:10px}
-.byline .triad{display:block;font-size:var(--fs-h2)}
-.byline .people{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
-.byline figure{display:flex;align-items:flex-end;gap:12px}
-.byline img{width:78px;aspect-ratio:4/5;object-fit:cover;background:#CFC6B7;flex:none}
-.byline figcaption{font:500 var(--fs-small)/1.3 var(--sans);color:var(--ink)}
 @media (min-width:720px){
-  .hero{padding:40px 0 64px}
-  .hero .wrap{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--col-gap)}
-  .hero .slides{grid-column:1/-1;grid-row:1}
-  /* a altura mínima reserva o lugar da assinatura à direita; a sobra fica embaixo dos botões */
-  .hero .body{padding-top:36px;min-height:236px;max-width:56%}
+  .hero{padding:40px 0 72px}
+  .hero .wrap{grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:auto auto 1fr;column-gap:var(--col-gap)}
+  .slide .display{grid-column:1/8;align-self:start}
+  .slide .body{grid-column:1/7;grid-row:2;padding-top:32px}
   .hero .actions{margin-top:28px;gap:14px 28px}
   .hero .actions .btn{padding-inline:24px}
-  .car{grid-column:1/7;grid-row:2;justify-content:flex-start;gap:18px;margin:32px 0 0;padding:0;border:0}
+  .car{grid-column:1/6;grid-row:3;align-self:start;justify-content:flex-start;gap:18px;margin-top:40px;padding:0;border:0}
   .car .arrows{margin:0}
-  .byline{grid-column:8/-1;grid-row:1/3;align-self:end;margin:0;position:relative;z-index:1}
-  .byline .people{gap:16px;margin-top:20px}
-  .byline figure{display:block}
-  .byline img{width:100%}
-  .byline figcaption{padding-top:10px}
+  /* dois retratos verticais desencontrados; o motivo trilíngue no vão acima do segundo */
+  .duo{grid-column:8/-1;grid-row:1/4;grid-template-rows:64px auto;gap:0 16px;margin:0;align-self:start}
+  .duo .f1{grid-column:1;grid-row:1/3}
+  .duo .f2{grid-column:2;grid-row:2}
+  .duo .triad{grid-column:2;grid-row:1;align-self:end;padding-bottom:16px;font-size:clamp(20px,2vw,28px)}
+  .duo img{aspect-ratio:2/3;object-position:50% 0}
+  .duo figcaption{padding-top:12px}
 }
 @media (min-width:1024px){
-  .hero{padding:56px 0 80px}
-  .hero .body{padding-top:44px;min-height:252px;max-width:41.5%}
-  .hero .actions{margin-top:32px}
-  .car{grid-column:1/6;margin-top:48px}
-  .byline{grid-column:9/-1}
-  .byline .people{margin-top:22px}
-  .byline figcaption{padding-top:12px}
-  /* PT e ES têm títulos mais longos: corpo menor para caber em três linhas e os retratos ficarem na primeira dobra */
-  .hero .display:lang(pt),.hero .display:lang(es){font-size:clamp(64px,7.5vw,108px);line-height:.92}
+  .hero{padding:64px 0 96px}
+  .slide .body{grid-column:1/6;padding-top:40px}
+  .duo{grid-template-rows:72px auto}
+  /* PT e ES têm títulos mais longos */
+  .hero .display:lang(pt),.hero .display:lang(es){font-size:clamp(42px,5vw,72px)}
 }
 
-/* ---------- Faixa de credibilidade: três fatos ligados pelo ponto dourado ---------- */
-.cred{border-top:1px solid var(--ink)}
-.cred li{display:grid;grid-template-columns:132px 1fr;align-items:baseline;column-gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+/* ---------- Faixa de credibilidade: três fatos em dourado claro sobre tinta ---------- */
+.cred{background:var(--ink);color:var(--on-ink);padding-block:14px}
+.cred li{display:grid;grid-template-columns:138px 1fr;align-items:baseline;column-gap:16px;padding:18px 0;border-bottom:1px solid var(--on-ink-line)}
 .cred li:nth-last-child(1){border-bottom:0}
 .fact-n{font:300 var(--fs-fact)/1 var(--serif);color:var(--ink);letter-spacing:-.03em;font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
 .fact-n .plus{color:var(--gold-ink)}
 .fact-what{font:500 var(--fs-lead)/1.3 var(--sans);color:var(--ink)}
 .fact-who{display:block;font:400 var(--fs-small)/1.4 var(--sans);color:var(--subtle);margin-top:3px}
+.cred .fact-n{font-weight:400;font-size:calc(var(--fs-fact) * 1.2);color:var(--on-ink-gold)}
+.cred .fact-n .plus{color:var(--on-ink-gold)}
+.cred .fact-what{color:#fff}
+.cred .fact-who{color:var(--on-ink)}
 .cred .sep{display:none}
 @media (min-width:720px){
-  .cred{border-bottom:1px solid var(--line)}
+  .cred{padding-block:8px}
   .cred ul{display:flex;justify-content:space-between;align-items:flex-start}
   .cred li{display:flex;flex-direction:column;gap:8px;padding:28px 0;border-bottom:0}
+  .cred .fact-n{font-size:var(--fs-fact)}
 }
 @media (min-width:1024px){
   .cred ul{align-items:center}
-  .cred li{flex-direction:row;align-items:baseline;gap:18px;padding:34px 0}
+  .cred li{flex-direction:row;align-items:baseline;gap:18px;padding:36px 0}
   .cred li.sep{display:block;padding:0;font:400 var(--fs-fact)/1 var(--serif);color:var(--gold)}
 }
 
 /* ---------- Intro: assimétrica, só texto, sem fio ---------- */
-.intro{padding:var(--sec) 0}
+.intro{padding:var(--sec) 0 0}
+/* foto do acervo da cliente em duotônico quente com grão: textura de marca, não foto de banco */
+.band-photo{margin-top:var(--sec)}
+.band-photo img{width:100%;height:clamp(190px,34vw,460px);object-fit:cover;object-position:38% 50%}
 .intro .h2{max-width:13em}
 .intro .txt p + p{margin-top:16px}
 .foot-line{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;margin-top:28px}
@@ -302,7 +306,7 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
    Celular: o numeral gigante abre cada item em largura total; sem fio entre os itens. */
 .nlist{border-top:1px solid var(--ink)}
 .nlist > li{position:relative;padding:28px 0 8px}
-.nlist .num{display:block;font:200 var(--fs-display-2)/.9 var(--serif);color:var(--gold-ink);font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.04em}
+.nlist .num{display:block;font:400 var(--fs-display-2)/.9 var(--serif);color:#A07D45;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.04em}
 .nlist .h3{margin-top:14px;font-size:var(--fs-h3l)}
 .nlist p{margin-top:10px;color:var(--muted);max-width:34em}
 .nlist .link{margin-top:18px}
@@ -310,7 +314,7 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
 .nlist .link::after{content:"";position:absolute;inset:0}
 @media (min-width:720px){
   .nlist > li{display:grid;grid-template-columns:88px minmax(0,1fr);column-gap:var(--col-gap);align-items:baseline;padding:32px 0 34px;border-bottom:1px solid var(--line)}
-  .nlist .num{font-size:var(--fs-2xl);line-height:1}
+  .nlist .num{font-size:var(--fs-2xl);font-weight:300;line-height:1}
   .nlist .h3{margin-top:0}
   .nlist p,.nlist .link{grid-column:2}
   .nlist .link{justify-self:start}
@@ -342,14 +346,20 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
 .lf .items p{color:var(--on-ink)}
 .ask{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;margin-top:36px}
 .lf .ask .h3{color:#fff}
+.lf-home{background:var(--sand);color:var(--ink-2)}
+.lf-home .tag{color:#6B4F24}
+.lf-home .h2,.lf-home .items .h3,.lf-home .ask .h3{color:var(--ink)}
+.lf-home .lead,.lf-home .items p{color:var(--ink-2)}
+.lf-home .hs-bar{background:rgba(15,36,51,.18)}
+.lf-home .hs-bar i{background:var(--ink)}
 @media (min-width:720px){
   .lf-home .head{grid-column:1/-1;display:grid;grid-template-columns:subgrid;align-items:end}
   .lf-home .tag{grid-column:1/-1}
   .lf-home .h2{grid-column:1/7}
   .lf-home .lead{grid-column:7/-1;margin:0}
   .lf-home .items{grid-column:1/-1;margin-top:64px;grid-auto-flow:row;grid-template-columns:1fr 1fr;gap:0 var(--col-gap)}
-  .lf-home .items > li{padding:24px 0 36px;border-top:1px solid var(--on-ink-line)}
-  .lf-home .ask{grid-column:1/-1;margin-top:0;padding-top:36px;border-top:1px solid rgba(255,255,255,.3)}
+  .lf-home .items > li{padding:24px 0 36px;border-top:1px solid rgba(15,36,51,.2)}
+  .lf-home .ask{grid-column:1/-1;margin-top:0;padding-top:36px;border-top:1px solid var(--ink)}
 }
 @media (min-width:1024px){
   .lf-home .items{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:80px}
@@ -388,14 +398,16 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
 
 /* ---------- Índice dos oito serviços ----------
    Celular: faixa que rola de lado, dois nomes por coluna. Desktop: nomes grandes em serifada, sem fio. */
-.index{padding:var(--sec) 0}
+.index{padding:var(--sec) 0;background:var(--ink);color:var(--on-ink)}
+.index .h2,.index-list .h3{color:#fff}
+.index .lead{color:var(--on-ink)}
 .index .lead{max-width:30em}
 .index-list{grid-template-rows:auto auto;row-gap:28px}
 .index-list article{position:relative}
-.index-list article:nth-child(even){padding-top:16px;border-top:1px solid var(--line)}
+.index-list article:nth-child(even){padding-top:16px;border-top:1px solid var(--on-ink-line)}
 .index-list .h3{font-size:var(--fs-h3l);transition:transform .25s ease}
 .index-list a::after{content:"";position:absolute;inset:0}
-.index-list p{margin-top:8px;font-size:var(--fs-ui);line-height:1.5;color:var(--muted)}
+.index-list p{margin-top:8px;font-size:var(--fs-ui);line-height:1.5;color:var(--on-ink)}
 @media (min-width:720px){
   .index .h2{grid-column:1/7}
   .index .lead{grid-column:8/-1;align-self:end}
@@ -403,7 +415,7 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
   .index-list article,.index-list article:nth-child(even){display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);column-gap:var(--col-gap);align-items:baseline;padding:9px 0;border-top:0}
   .index-list .h3{font-size:var(--fs-h2);font-weight:300;letter-spacing:-.02em}
   .index-list article:hover .h3{transform:translateX(8px)}
-  .index-list article:hover a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;text-decoration-color:var(--gold)}
+  .index-list article:hover a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;text-decoration-color:var(--on-ink-gold)}
   .index-list p{margin-top:0;min-height:3em}
 }
 
@@ -420,24 +432,29 @@ body.menu-open .wa-wrap,body.menu-open .wa-float{display:none}
   .faq summary{padding-block:24px}
 }
 
-/* ---------- CTA final: tipográfico, com o monograma inteiro (pequeno no celular, marca d'água no desktop) ---------- */
-.cta{position:relative;overflow:hidden;padding:64px 0 72px;border-top:1px solid var(--line)}
-.cta::after{content:"";position:absolute;right:var(--gutter);top:58px;width:32px;height:43px;background:url("../img/mark.svg") no-repeat center/contain;pointer-events:none}
-.cta .wrap{position:relative;z-index:1}
-.cta .triad{font-size:var(--fs-2xl)}
-.cta .h2{margin-top:28px;max-width:17em}
+/* ---------- CTA final: tinta cheia, foto do acervo escurecida ao fundo, motivo trilíngue em dourado claro ---------- */
+.cta{position:relative;overflow:hidden;padding:64px 0 72px;background:var(--ink);color:var(--on-ink)}
+.cta-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.cta::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(15,36,51,.94) 0%,rgba(15,36,51,.82) 55%,rgba(15,36,51,.6) 100%)}
+.cta::after{content:"";position:absolute;z-index:1;right:var(--gutter);top:58px;width:32px;height:43px;background:url("../img/mark.svg") no-repeat center/contain;pointer-events:none}
+.cta .wrap{position:relative;z-index:2}
+.cta .triad{font-size:var(--fs-2xl);color:var(--on-ink-gold)}
+.cta .triad .dot{color:#fff}
+.cta .h2{margin-top:28px;max-width:17em;color:#fff}
 .cta .h2 .nb{display:inline-block}
-.cta .lead{margin-top:16px;max-width:34em}
-.cta .actions{margin-top:30px}
+.cta .lead{margin-top:16px;max-width:34em;color:var(--on-ink)}
+.cta .actions{margin-top:30px;gap:6px 28px}
 .cta .actions .btn{flex:1 1 100%}
-.cta .who{font-weight:400;color:var(--muted)}
+.cta .link{color:#fff;text-decoration-color:rgba(255,255,255,.55)}
+.cta .link:hover{text-decoration-color:var(--on-ink-gold)}
+.cta .who{font-weight:400;color:var(--on-ink)}
 .cta .tel{display:inline-flex;align-items:center;min-height:44px;font-variant-numeric:tabular-nums}
 .cta .tel::before{content:none}
-.cta .actions{gap:6px 28px}
+.cta :focus-visible{outline-color:#fff}
 @media (min-width:600px){.cta .actions .btn{flex:none}}
 @media (min-width:720px){
   .cta{padding:104px 0 112px}
-  .cta::after{right:-60px;top:50%;width:300px;height:400px;transform:translateY(-50%);background-image:url("../img/mark-outline.svg");opacity:.34}
+  .cta::after{right:-60px;top:50%;width:300px;height:400px;transform:translateY(-50%);background-image:url("../img/mark-outline.svg");opacity:.5}
   .cta .h2{margin-top:40px}
   .cta .actions{margin-top:40px;gap:6px 36px}
 }

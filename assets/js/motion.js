@@ -51,7 +51,7 @@
       zo = new IntersectionObserver((es) => { es.forEach((e) => hits[e.isIntersecting ? "add" : "delete"](e.target)); upd(); },
         { rootMargin: `${24 - r.top}px ${r.right - root.clientWidth + 8}px ${r.bottom - innerHeight + 24}px ${8 - r.left}px` });
       /* linhas inteiras clicáveis (serviços, índice, artigos) contam como o controle */
-      document.querySelectorAll("a[href],button,input,select,textarea,summary,label.consent,.byline figure")
+      document.querySelectorAll("a[href],button,input,select,textarea,summary,label.consent,.duo figure")
         .forEach((e) => { if (!fab.contains(e) && !e.closest("#mobile-menu,.skip")) zo.observe(e.closest(".nlist > li,.index-list article,.post-row") || e); });
     };
     /* tela ou idioma mudou (a troca recria links dentro dos textos): observa de novo */
