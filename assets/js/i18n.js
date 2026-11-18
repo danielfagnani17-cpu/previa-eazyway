@@ -82,6 +82,8 @@ pt: {
   h_s3_text: "Intérpretes presenciais para entrevistas e compromissos, e interpretação por telefone em português e espanhol em todo o país.",
   btn_interp: "Agendar Intérprete", btn_contact: "Fale Conosco",
   prev: "Slide anterior", next: "Próximo slide",
+  /* faixa de credibilidade (v2) */
+  cred_cases: "casos", cred_years: "anos", cred_langs: "idiomas",
   tick1: "Tradução Certificada", tick2: "Divórcio e Mudança de Nome", tick3: "Intérpretes",
   h_intro_title: "Documentos certos da primeira vez, explicados em palavras simples.",
   h_intro_p1: "Somos uma empresa de preparação de documentos que atende famílias, casais e profissionais que vivem entre idiomas. Preenchemos, formatamos e traduzimos os documentos que você precisa e revisamos cada página com você antes da assinatura ou do protocolo.",
@@ -327,6 +329,8 @@ es: {
   h_s3_text: "Intérpretes en persona para entrevistas y citas, e interpretación telefónica en portugués y español en todo el país.",
   btn_interp: "Reservar Intérprete", btn_contact: "Contáctenos",
   prev: "Diapositiva anterior", next: "Siguiente diapositiva",
+  /* faixa de credibilidade (v2) */
+  cred_cases: "casos", cred_years: "años", cred_langs: "idiomas",
   tick1: "Traducción Certificada", tick2: "Divorcio y Cambio de Nombre", tick3: "Intérpretes",
   h_intro_title: "Trámites bien hechos desde el principio, explicados con palabras sencillas.",
   h_intro_p1: "Somos una empresa de preparación de documentos que atiende a familias, parejas y profesionales que viven entre idiomas. Completamos, damos formato y traducimos los documentos que necesita, y revisamos cada página con usted antes de firmar o presentar.",

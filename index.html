@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Idioma salvo antes da primeira pintura (o hash deste script está na CSP de site/_headers) -->
+<script>(function(){try{var l=localStorage.getItem("site-lang");if(l==="pt"||l==="es"){var d=document.documentElement;d.lang=l==="pt"?"pt-BR":l;d.classList.add("i18n-wait");setTimeout(function(){d.classList.remove("i18n-wait")},3000)}}catch(e){}})();</script>
 <title data-i18n="title_home">Eazy Way Solutions · Document Preparation &amp; Certified Translation</title>
 <meta name="description" content="Document preparation, certified translation and interpreters in English, Portuguese and Spanish.">
 <!-- social:start (gerado por npm run blog, não edite à mão) -->
@@ -21,18 +24,15 @@
 <meta name="twitter:title" content="Eazy Way Solutions · Document Preparation &amp; Certified Translation">
 <meta name="twitter:description" content="Document preparation, certified translation and interpreters in English, Portuguese and Spanish.">
 <meta name="twitter:image" content="https://www.eazywaysolutions.com/assets/img/og-default.jpg">
-<meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#FAFAF7">
 <!-- social:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Webfonts sem bloquear a primeira pintura: o main.js troca media para "all"; as fontes de reserva têm métrica ajustada (style.css) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap" media="print" data-async-css>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap"></noscript>
-<link rel="preload" as="image" type="image/webp" href="assets/img/banner-services.webp" imagesrcset="assets/img/banner-services-800.webp 800w, assets/img/banner-services.webp 1600w" imagesizes="(min-width:900px) 58vw, 100vw" fetchpriority="high">
+<!-- Fontes auto-hospedadas (variáveis, font-display: swap). Preload só do que aparece na primeira tela. -->
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/libre-franklin-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/newsreader-italic-var.woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <noscript><link rel="stylesheet" href="assets/css/nojs.css"></noscript>
 <script type="application/ld+json">
@@ -44,227 +44,190 @@
 
 <main id="main">
 
-<!-- 2. HERO ============================================================= -->
-<section class="hero" data-slider aria-roledescription="carousel" aria-label="Highlights">
-  <div class="slide active">
-    <figure class="photo" data-img="hero1"><noscript><img src="assets/img/banner-services.webp" width="1600" height="1067" alt=""></noscript></figure>
-    <div class="content wrap on-photo">
-      <div class="copy">
-        <h1 class="h1" data-i18n="h_s1_title">Your Documents Prepared With Care, In Your Language.</h1>
-        <p class="lead" data-i18n="h_s1_text">Divorce, name change, power of attorney and marriage agreements, prepared, translated and explained step by step at a flat price.</p>
-        <div class="btns">
-          <a class="btn btn-white" href="services/"><span data-i18n="btn_services">Our Services</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="about/" data-i18n="btn_learn">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slide" data-tone="dark" data-color="teal">
-    <figure class="photo" data-img="hero2"><noscript><img src="assets/img/blog-translation.webp" width="1600" height="1067" alt="" loading="lazy"></noscript></figure>
-    <div class="content wrap on-photo">
-      <div class="copy">
-        <h2 class="h1" data-i18n="h_s2_title">Certified Translations Accepted Where You Need Them.</h2>
-        <p class="lead" data-i18n="h_s2_text">Birth, marriage and school records translated with a signed statement of accuracy for USCIS, courts and consulates.</p>
-        <div class="btns">
-          <a class="btn btn-white" href="services/#translation"><span data-i18n="btn_translation">Translation Services</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="contact/" data-i18n="btn_quote">Request a Quote</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slide" data-color="cream">
-    <figure class="photo" data-img="hero3"><noscript><img src="assets/img/banner-contact.webp" width="1600" height="900" alt="" loading="lazy"></noscript></figure>
-    <div class="content wrap on-photo">
-      <div class="copy">
-        <h2 class="h1" data-i18n="h_s3_title">A Professional Interpreter At Your Side.</h2>
-        <p class="lead" data-i18n="h_s3_text">In-person interpreters for interviews and appointments, and phone interpretation in Portuguese and Spanish nationwide.</p>
-        <div class="btns">
-          <a class="btn btn-white" href="services/#interpreters"><span data-i18n="btn_interp">Book an Interpreter</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn-ghost" href="contact/" data-i18n="btn_contact">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <button class="hero-ctrl prev" type="button"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M19 3 7 15l12 12" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span class="visually-hidden" data-i18n="prev">Previous slide</span></button>
-  <button class="hero-ctrl next" type="button"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="m11 3 12 12-12 12" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span class="visually-hidden" data-i18n="next">Next slide</span></button>
-
-  <div class="hero-foot">
-    <div class="wrap">
-      <div class="hero-dots" role="group" aria-label="Choose slide"></div>
-    </div>
-  </div>
-</section>
-
-<!-- 3. APRESENTAÇÃO ===================================================== -->
-<section class="section intro">
-  <div class="wrap two-col">
-    <div class="stack-lg">
-      <h2 class="h2" data-i18n="h_intro_title">Paperwork done right the first time, explained in plain words.</h2>
-      <p class="lead" data-i18n="h_intro_p1">We are a document preparation company serving families, couples and professionals who live between languages. We complete, format and translate the documents you need, and we review every page with you before you sign or file.</p>
-      <p class="lead" data-i18n="h_intro_p2">Every case starts with a free review. You know the price and the timeline before you commit, and one person follows your case from the first call to the final copy.</p>
-      <a class="link-arrow underlined" href="about/"><span data-i18n="btn_about">More About Us</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-    </div>
-    <div class="about-pic duo">
-      <figure class="photo main plain" data-img="founderNatalia"><noscript><img src="assets/img/founder-natalia-cutout.webp" width="900" height="1125" alt="Portrait of Natalia Rosato, Co-Founder and Paralegal" loading="lazy"></noscript></figure>
-      <figure class="photo small plain" data-img="founderVitoria"><noscript><img src="assets/img/founder-vitoria-cutout.webp" width="900" height="1125" alt="Portrait of Vitoria Oliver, Co-Founder and Paralegal" loading="lazy"></noscript></figure>
-      <p class="sig">Natalia Rosato</p>
-      <p class="sig">Vitoria Oliver</p>
-    </div>
-  </div>
-</section>
-
-<!-- 4. TRÊS SERVIÇOS PRINCIPAIS ======================================== -->
-<section class="section alt">
+<!-- HERO · Cartaz: três slides, mesmo título/texto/botões; as fundadoras assinam =========== -->
+<section class="hero" data-carousel aria-roledescription="carousel" aria-label="Highlights">
   <div class="wrap">
-    <div class="head split">
-      <div class="stack">
-        <h2 class="h2" data-i18n="h_main_title">Our core services</h2>
+    <div class="slides">
+      <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 / 3">
+        <h1 class="display" data-i18n="h_s1_title">Your Documents Prepared With Care, In Your Language.</h1>
+        <div class="body">
+          <p class="lead" data-i18n="h_s1_text">Divorce, name change, power of attorney and marriage agreements, prepared, translated and explained step by step at a flat price.</p>
+          <div class="actions"><a class="btn btn-solid" href="services/" data-i18n="btn_services">Our Services</a><a class="link" href="about/" data-i18n="btn_learn">Learn More</a></div>
+        </div>
       </div>
-      <a class="btn btn-outline" href="services/"><span data-i18n="btn_all">All Services</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="2 / 3">
+        <h2 class="display" data-i18n="h_s2_title">Certified Translations Accepted Where You Need Them.</h2>
+        <div class="body">
+          <p class="lead" data-i18n="h_s2_text">Birth, marriage and school records translated with a signed statement of accuracy for USCIS, courts and consulates.</p>
+          <div class="actions"><a class="btn btn-solid" href="services/#translation" data-i18n="btn_translation">Translation Services</a><a class="link" href="contact/" data-i18n="btn_quote">Request a Quote</a></div>
+        </div>
+      </div>
+      <div class="slide" role="group" aria-roledescription="slide" aria-label="3 / 3">
+        <h2 class="display" data-i18n="h_s3_title">A Professional Interpreter At Your Side.</h2>
+        <div class="body">
+          <p class="lead" data-i18n="h_s3_text">In-person interpreters for interviews and appointments, and phone interpretation in Portuguese and Spanish nationwide.</p>
+          <div class="actions"><a class="btn btn-solid" href="services/#interpreters" data-i18n="btn_interp">Book an Interpreter</a><a class="link" href="contact/" data-i18n="btn_contact">Contact Us</a></div>
+        </div>
+      </div>
     </div>
-    <div class="cards-3">
-      <article class="svc-card">
-        <div class="body">
-          <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg></span>
-          <h3 class="h3" data-i18n="c1_title">Family Documents</h3>
-          <p data-i18n="c1_text">Uncontested divorce, name change and prenuptial or postnuptial agreements, prepared for your state and ready to file.</p>
-          <a class="link-arrow" href="services/#divorce"><span data-i18n="read_more">Read More</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </article>
-      <article class="svc-card">
-        <div class="body">
-          <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg></span>
-          <h3 class="h3" data-i18n="c2_title">Certified Translation</h3>
-          <p data-i18n="c2_text">Certificates, records and legal documents translated between English, Portuguese and Spanish with a signed statement of accuracy.</p>
-          <a class="link-arrow" href="services/#translation"><span data-i18n="read_more">Read More</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </article>
-      <article class="svc-card">
-        <div class="body">
-          <span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-messages"/></svg></span>
-          <h3 class="h3" data-i18n="c3_title">Interpreters</h3>
-          <p data-i18n="c3_text">In-person interpreters in Georgia, Alabama and Colorado, and phone interpretation in Portuguese and Spanish.</p>
-          <a class="link-arrow" href="services/#interpreters"><span data-i18n="read_more">Read More</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </article>
+    <div class="car">
+      <p class="count" aria-live="polite"><b data-cur>1</b> <span>/ 3</span></p>
+      <div class="arrows">
+        <button type="button" data-prev><svg viewBox="0 0 28 12" aria-hidden="true"><path d="M27 6H1m5-5L1 6l5 5" fill="none" stroke="currentColor"/></svg><span class="visually-hidden" data-i18n="prev">Previous slide</span></button>
+        <button type="button" data-next><svg viewBox="0 0 28 12" aria-hidden="true"><path d="M1 6h26m-5-5 5 5-5 5" fill="none" stroke="currentColor"/></svg><span class="visually-hidden" data-i18n="next">Next slide</span></button>
+      </div>
+    </div>
+    <div class="byline">
+      <p class="triad" aria-hidden="true">Hello <span class="dot">&middot;</span> Ol&aacute; <span class="dot">&middot;</span> Hola</p>
+      <div class="people">
+        <figure><img src="assets/img/founder-natalia-close.webp" srcset="assets/img/founder-natalia-close-360.webp 360w, assets/img/founder-natalia-close.webp 700w" sizes="(min-width:900px) 184px, 78px" width="700" height="875" alt="Portrait of Natalia Rosato, Co-Founder and Paralegal" decoding="async"><figcaption aria-hidden="true">Natalia Rosato</figcaption></figure>
+        <figure><img src="assets/img/founder-vitoria-close.webp" srcset="assets/img/founder-vitoria-close-360.webp 360w, assets/img/founder-vitoria-close.webp 700w" sizes="(min-width:900px) 184px, 78px" width="700" height="875" alt="Portrait of Vitoria Oliver, Co-Founder and Paralegal" decoding="async"><figcaption aria-hidden="true">Vitoria Oliver</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4b. PARA ESCRITÓRIOS DE ADVOCACIA =================================== -->
-<section class="lawfirms" id="law-firms" aria-labelledby="lf-title">
+<!-- FATOS · cada número leva o nome de quem ele pertence ================================== -->
+<section class="cred" aria-label="Eazy Way Solutions">
   <div class="wrap">
-    <div class="lf-head">
-      <p class="lf-tag" data-i18n="lf_tag">For Law Firms</p>
-      <h2 class="h2" id="lf-title" data-i18n="lf_title">Language and document support for your practice.</h2>
-      <p class="lead" data-i18n="lf_text">We work alongside attorneys and paralegals who serve Portuguese and Spanish speaking clients. You direct the work and we deliver it on your deadline.</p>
-    </div>
-    <ul class="lf-grid">
-      <li><span class="lf-ico"><svg class="ic" aria-hidden="true"><use href="#i-list-checks"/></svg></span><h3 class="h3" data-i18n="lf6_t">Case management</h3><p data-i18n="lf6_d">Documents, deadlines and case files kept organized for your team while the case moves forward.</p></li>
-      <li><span class="lf-ico"><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg></span><h3 class="h3" data-i18n="lf1_t">Certified translations for case files</h3><p data-i18n="lf1_d">Certificates, records and evidence translated between English, Portuguese and Spanish, with a signed statement of accuracy.</p></li>
-      <li><span class="lf-ico"><svg class="ic" aria-hidden="true"><use href="#i-messages"/></svg></span><h3 class="h3" data-i18n="lf2_t">Interpreters for client meetings</h3><p data-i18n="lf2_d">In person for interviews and appointments in Georgia, Alabama and Colorado, and by phone nationwide.</p></li>
-      <li><span class="lf-ico"><svg class="ic" aria-hidden="true"><use href="#i-file-search"/></svg></span><h3 class="h3" data-i18n="lf3_t">FBI and FOIA record requests</h3><p data-i18n="lf3_d">FBI Identity History Summary requests and FOIA requests to the FBI and CBP, tracked until the records arrive.</p></li>
-      <li><span class="lf-ico"><svg class="ic" aria-hidden="true"><use href="#i-file-pen"/></svg></span><h3 class="h3" data-i18n="lf4_t">Document preparation at your direction</h3><p data-i18n="lf4_d">Forms and supporting documents completed and formatted from your instructions, ready for your review.</p></li>
-      <li><span class="lf-ico"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span><h3 class="h3" data-i18n="lf5_t">Documents for use in Brazil</h3><p data-i18n="lf5_d">Powers of attorney, marriage registration with the Brazilian consulate and the apostille steps.</p></li>
-      <li class="lf-cta"><h3 class="h3" data-i18n="lf_cta_t">Have a case that needs support?</h3><a class="btn btn-white" href="law-firms/"><span data-i18n="lf_more">Learn More</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+    <ul>
+      <li><span class="fact-n"><span class="visually-hidden">340+</span><span aria-hidden="true"><span data-count="340">340</span><span class="plus">+</span></span></span><span class="fact-what"><span data-i18n="cred_cases">cases</span><span class="fact-who">Vitoria Oliver</span></span></li>
+      <li class="sep" aria-hidden="true">&middot;</li>
+      <li><span class="fact-n"><span class="visually-hidden">6+</span><span aria-hidden="true"><span data-count="6">6</span><span class="plus">+</span></span></span><span class="fact-what"><span data-i18n="cred_years">years</span><span class="fact-who">Natalia Rosato</span></span></li>
+      <li class="sep" aria-hidden="true">&middot;</li>
+      <li><span class="fact-n"><span class="visually-hidden">3</span><span aria-hidden="true"><span data-count="3">3</span></span></span><span class="fact-what"><span data-i18n="cred_langs">languages</span><span class="fact-who">English, Portugu&ecirc;s, Espa&ntilde;ol</span></span></li>
     </ul>
   </div>
 </section>
 
-<!-- 5. DEPOIMENTOS ====================================================== -->
-<section class="section tight alt">
-  <div class="wrap">
-    <div class="head center">
-      <h2 class="h2" id="testi-title" data-i18n="testi_title">What our clients say</h2>
+<!-- INTRO · assimétrica, só texto ======================================================== -->
+<section class="intro">
+  <div class="wrap cols">
+    <h2 class="h2" data-i18n="h_intro_title">Paperwork done right the first time, explained in plain words.</h2>
+    <div class="txt">
+      <p class="lead" data-i18n="h_intro_p1">We are a document preparation company serving families, couples and professionals who live between languages. We complete, format and translate the documents you need, and we review every page with you before you sign or file.</p>
+      <p class="lead" data-i18n="h_intro_p2">Every case starts with a free review. You know the price and the timeline before you commit, and one person follows your case from the first call to the final copy.</p>
+      <div class="foot-line"><a class="link tap" href="about/" data-i18n="btn_about">More About Us</a><p class="names"><span>Natalia Rosato</span><span class="dot" aria-hidden="true">&middot;</span><span>Vitoria Oliver</span></p></div>
     </div>
-    <div class="testi-slider" data-tslider aria-roledescription="carousel" aria-labelledby="testi-title">
-      <button class="ts-ctrl prev" type="button"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M19 3 7 15l12 12" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span class="visually-hidden" data-i18n="prev">Previous slide</span></button>
-      <div class="ts-track">
-        <figure class="testi active">
-          <span class="stars" role="img" aria-label="5 out of 5 stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+  </div>
+</section>
+
+<!-- SERVIÇOS · lista numerada, na mesma ordem 1, 2, 3 dos slides ========================= -->
+<section class="svc sec sec-white">
+  <div class="wrap cols">
+    <div class="head">
+      <h2 class="h2" data-i18n="h_main_title">Our core services</h2>
+      <a class="btn btn-line" href="services/" data-i18n="btn_all">All Services</a>
+    </div>
+    <ol class="nlist has-link">
+      <li><span class="num" aria-hidden="true">01</span><h3 class="h3" data-i18n="c1_title">Family Documents</h3><p data-i18n="c1_text">Uncontested divorce, name change and prenuptial or postnuptial agreements, prepared for your state and ready to file.</p><a class="link" href="services/#divorce" data-i18n="read_more">Read More</a></li>
+      <li><span class="num" aria-hidden="true">02</span><h3 class="h3" data-i18n="c2_title">Certified Translation</h3><p data-i18n="c2_text">Certificates, records and legal documents translated between English, Portuguese and Spanish with a signed statement of accuracy.</p><a class="link" href="services/#translation" data-i18n="read_more">Read More</a></li>
+      <li><span class="num" aria-hidden="true">03</span><h3 class="h3" data-i18n="c3_title">Interpreters</h3><p data-i18n="c3_text">In-person interpreters in Georgia, Alabama and Colorado, and phone interpretation in Portuguese and Spanish.</p><a class="link" href="services/#interpreters" data-i18n="read_more">Read More</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FOR LAW FIRMS · a única faixa de largura total em tinta ============================== -->
+<section class="lf lf-home on-ink" id="law-firms" aria-labelledby="lf-title">
+  <div class="wrap cols">
+    <div class="head">
+      <p class="tag" data-i18n="lf_tag">For Law Firms</p>
+      <h2 class="h2" id="lf-title" data-i18n="lf_title">Language and document support for your practice.</h2>
+      <p class="lead" data-i18n="lf_text">We work alongside attorneys and paralegals who serve Portuguese and Spanish speaking clients. You direct the work and we deliver it on your deadline.</p>
+    </div>
+    <div class="hscroll">
+    <ul class="items hs-track">
+      <li><h3 class="h3" data-i18n="lf6_t">Case management</h3><p data-i18n="lf6_d">Documents, deadlines and case files kept organized for your team while the case moves forward.</p></li>
+      <li><h3 class="h3" data-i18n="lf1_t">Certified translations for case files</h3><p data-i18n="lf1_d">Certificates, records and evidence translated between English, Portuguese and Spanish, with a signed statement of accuracy.</p></li>
+      <li><h3 class="h3" data-i18n="lf2_t">Interpreters for client meetings</h3><p data-i18n="lf2_d">In person for interviews and appointments in Georgia, Alabama and Colorado, and by phone nationwide.</p></li>
+      <li><h3 class="h3" data-i18n="lf3_t">FBI and FOIA record requests</h3><p data-i18n="lf3_d">FBI Identity History Summary requests and FOIA requests to the FBI and CBP, tracked until the records arrive.</p></li>
+      <li><h3 class="h3" data-i18n="lf4_t">Document preparation at your direction</h3><p data-i18n="lf4_d">Forms and supporting documents completed and formatted from your instructions, ready for your review.</p></li>
+      <li><h3 class="h3" data-i18n="lf5_t">Documents for use in Brazil</h3><p data-i18n="lf5_d">Powers of attorney, marriage registration with the Brazilian consulate and the apostille steps.</p></li>
+    </ul>
+    </div>
+    <div class="ask"><h3 class="h3" data-i18n="lf_cta_t">Have a case that needs support?</h3><a class="btn btn-white" href="law-firms/" data-i18n="lf_more">Learn More</a></div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS · uma citação grande e as outras cinco em texto corrido ================== -->
+<section class="voices" aria-labelledby="testi-title">
+  <div class="wrap cols">
+    <h2 class="h2" id="testi-title" data-i18n="testi_title">What our clients say</h2>
+    <figure class="voice voice-lead">
           <blockquote data-i18n="testi1">The support from the beginning was amazing and made me feel safe throughout the process. Every question was answered quickly and with patience. The guidance was personalized, nothing generic. 100% recommend!</blockquote>
-          <figcaption class="who"><span class="avatar" aria-hidden="true">J</span><span><b>Júlia F.</b><a class="src" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg><span data-i18n="testi_src">Facebook review</span></a></span></figcaption>
-        </figure>
-        <figure class="testi">
-          <span class="stars" role="img" aria-label="5 out of 5 stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+          <figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><b>Júlia F.</b><a class="link src tap" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><span data-i18n="testi_src">Facebook review</span></a></figcaption>
+      </figure>
+    <div class="voice-rest">
+      <figure class="voice">
           <blockquote data-i18n="testi2">I had a great experience: serious work, very helpful, and they answered all my questions.</blockquote>
-          <figcaption class="who"><span class="avatar" aria-hidden="true">D</span><span><b>Duda M.</b><a class="src" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg><span data-i18n="testi_src">Facebook review</span></a></span></figcaption>
-        </figure>
-        <figure class="testi">
-          <span class="stars" role="img" aria-label="5 out of 5 stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+          <figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><b>Duda M.</b><a class="link src tap" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><span data-i18n="testi_src">Facebook review</span></a></figcaption>
+      </figure>
+      <figure class="voice">
           <blockquote data-i18n="testi3">Always very attentive, patient and willing to help. They guided me through every step, answered all my questions, and made me feel at ease.</blockquote>
-          <figcaption class="who"><span class="avatar" aria-hidden="true">T</span><span><b>Tayna B.</b><a class="src" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg><span data-i18n="testi_src">Facebook review</span></a></span></figcaption>
-        </figure>
-        <figure class="testi">
-          <span class="stars" role="img" aria-label="5 out of 5 stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+          <figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><b>Tayna B.</b><a class="link src tap" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><span data-i18n="testi_src">Facebook review</span></a></figcaption>
+      </figure>
+      <figure class="voice">
           <blockquote data-i18n="testi4">They explained every detail clearly and were always available.</blockquote>
-          <figcaption class="who"><span class="avatar" aria-hidden="true">K</span><span><b>Katarina B.</b><a class="src" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg><span data-i18n="testi_src">Facebook review</span></a></span></figcaption>
-        </figure>
-        <figure class="testi">
-          <span class="stars" role="img" aria-label="5 out of 5 stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+          <figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><b>Katarina B.</b><a class="link src tap" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><span data-i18n="testi_src">Facebook review</span></a></figcaption>
+      </figure>
+      <figure class="voice">
           <blockquote data-i18n="testi5">The level of dedication and professionalism was truly incredible: exceptional accuracy at a speed that far exceeded my expectations.</blockquote>
-          <figcaption class="who"><span class="avatar" aria-hidden="true">A</span><span><b>Anne S.</b><a class="src" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg><span data-i18n="testi_src">Facebook review</span></a></span></figcaption>
-        </figure>
-        <figure class="testi">
-          <span class="stars" role="img" aria-label="5 out of 5 stars"><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg><svg class="ic" aria-hidden="true"><use href="#i-star"/></svg></span>
+          <figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><b>Anne S.</b><a class="link src tap" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><span data-i18n="testi_src">Facebook review</span></a></figcaption>
+      </figure>
+      <figure class="voice">
           <blockquote data-i18n="testi6">I was very well attended and guided at every step.</blockquote>
-          <figcaption class="who"><span class="avatar" aria-hidden="true">A</span><span><b>Amanda D.</b><a class="src" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-facebook"/></svg><span data-i18n="testi_src">Facebook review</span></a></span></figcaption>
-        </figure>
-      </div>
-      <button class="ts-ctrl next" type="button"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="m11 3 12 12-12 12" fill="none" stroke="currentColor" stroke-width="1.3"/></svg><span class="visually-hidden" data-i18n="next">Next slide</span></button>
-      <div class="ts-dots" role="group" aria-label="Choose testimonial"></div>
+          <figcaption><span class="stars" role="img" aria-label="5 out of 5 stars"><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg></span><b>Amanda D.</b><a class="link src tap" href="https://www.facebook.com/profile.php?id=61558719274715&amp;sk=reviews" target="_blank" rel="noopener"><span data-i18n="testi_src">Facebook review</span></a></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- 8. SERVIÇOS DETALHADOS ============================================== -->
-<section class="section">
-  <div class="wrap">
-    <div class="head split plain">
-      <div class="stack">
-        <h2 class="h2" data-i18n="h_grid_title">Everything on your paperwork list, in one place.</h2>
-      </div>
-      <p class="lead" data-i18n="h_grid_text">Choose a service to see what it includes and what you will need to get started.</p>
+<!-- ÍNDICE · os oito serviços como sumário =============================================== -->
+<section class="index">
+  <div class="wrap cols">
+    <h2 class="h2" data-i18n="h_grid_title">Everything on your paperwork list, in one place.</h2>
+    <p class="lead" data-i18n="h_grid_text">Choose a service to see what it includes and what you will need to get started.</p>
+    <div class="hscroll">
+    <div class="index-list hs-track">
+      <article><h3 class="h3"><a href="services/#divorce" data-i18n="s_divorce">Uncontested Divorce</a></h3><p data-i18n="s_divorce_d">Petition, settlement agreement and supporting forms prepared for your state.</p></article>
+      <article><h3 class="h3"><a href="services/#name-change" data-i18n="s_name">Name Change</a></h3><p data-i18n="s_name_d">Court petition plus the updates for Social Security, driver's license and passport.</p></article>
+      <article><h3 class="h3"><a href="services/#translation" data-i18n="s_translation">Certified Translation</a></h3><p data-i18n="s_translation_d">Birth, marriage and school records between English, Portuguese and Spanish.</p></article>
+      <article><h3 class="h3"><a href="services/#power-of-attorney" data-i18n="s_poa">Power of Attorney</a></h3><p data-i18n="s_poa_d">General and specific powers of attorney, including versions for use in Brazil.</p></article>
+      <article><h3 class="h3"><a href="services/#prenup" data-i18n="s_prenup">Prenuptial &amp; Postnuptial</a></h3><p data-i18n="s_prenup_d">Marriage agreements drafted from your terms, ready for review and signature.</p></article>
+      <article><h3 class="h3"><a href="services/#background" data-i18n="s_background">Background Checks</a></h3><p data-i18n="s_background_d">FBI Identity History Summary requests and FOIA requests to the FBI and CBP.</p></article>
+      <article><h3 class="h3"><a href="services/#passport-visa" data-i18n="s_passport">Passport &amp; Brazilian Visa</a></h3><p data-i18n="s_passport_d">Passport applications, plus Brazilian visa applications for U.S. citizens.</p></article>
+      <article><h3 class="h3"><a href="services/#marriage-brazil" data-i18n="s_marriage">Marriage Registration in Brazil</a></h3><p data-i18n="s_marriage_d">Register your U.S. marriage with the Brazilian consulate, from translation to submission.</p></article>
     </div>
-    <div class="svc-grid">
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#divorce" data-i18n="s_divorce">Uncontested Divorce</a></h3><p data-i18n="s_divorce_d">Petition, settlement agreement and supporting forms prepared for your state.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#name-change" data-i18n="s_name">Name Change</a></h3><p data-i18n="s_name_d">Court petition plus the updates for Social Security, driver's license and passport.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#translation" data-i18n="s_translation">Certified Translation</a></h3><p data-i18n="s_translation_d">Birth, marriage and school records between English, Portuguese and Spanish.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#power-of-attorney" data-i18n="s_poa">Power of Attorney</a></h3><p data-i18n="s_poa_d">General and specific powers of attorney, including versions for use in Brazil.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#prenup" data-i18n="s_prenup">Prenuptial &amp; Postnuptial</a></h3><p data-i18n="s_prenup_d">Marriage agreements drafted from your terms, ready for review and signature.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#background" data-i18n="s_background">Background Checks</a></h3><p data-i18n="s_background_d">FBI Identity History Summary requests and FOIA requests to the FBI and CBP.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#passport-visa" data-i18n="s_passport">Passport &amp; Brazilian Visa</a></h3><p data-i18n="s_passport_d">Passport applications, plus Brazilian visa applications for U.S. citizens.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
-      <article class="svc-item"><h3 class="h3"><a class="svc-link" href="services/#marriage-brazil" data-i18n="s_marriage">Marriage Registration in Brazil</a></h3><p data-i18n="s_marriage_d">Register your U.S. marriage with the Brazilian consulate, from translation to submission.</p><svg class="go" aria-hidden="true"><use href="#i-arrow"/></svg></article>
     </div>
   </div>
 </section>
 
-<!-- 9. FAQ ============================================================== -->
-<section class="section alt">
-  <div class="wrap">
-    <div class="two-col top">
-      <div class="stack-lg">
-        <h2 class="h2" data-i18n="faq_title">Before you get started</h2>
-        <p class="lead" data-i18n="faq_text">Can't find your question here? Call us or send a message and we will answer in your language.</p>
-        <div class="btns"><a class="btn btn-dark" href="contact/"><span data-i18n="btn_ask">Ask a Question</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-      </div>
-      <div class="faq">
+<!-- FAQ · coluna deslocada, título na margem ============================================= -->
+<section class="faq-sec sec sec-white">
+  <div class="wrap cols">
+    <div class="side">
+      <h2 class="h2" data-i18n="faq_title">Before you get started</h2>
+      <p class="lead" data-i18n="faq_text">Can't find your question here? Call us or send a message and we will answer in your language.</p>
+      <a class="btn btn-line" href="contact/" data-i18n="btn_ask">Ask a Question</a>
+    </div>
+    <div class="faq">
         <details open><summary><span data-i18n="q1">Are you a law firm?</span><span class="pm" aria-hidden="true">+</span></summary><p data-i18n="a1">No. We are a document preparation service. We prepare and translate documents based on the information you provide, and we do not give legal advice. If your case needs an attorney, we will tell you.</p></details>
         <details><summary><span data-i18n="q2">Do I need to come to an office?</span><span class="pm" aria-hidden="true">+</span></summary><p data-i18n="a2">Most services are done fully online or by phone. Interpreters meet you in person in Georgia, Alabama and Colorado.</p></details>
         <details><summary><span data-i18n="q3">Will my translation be accepted?</span><span class="pm" aria-hidden="true">+</span></summary><p data-i18n="a3">Our certified translations include a signed statement of accuracy, the format required by USCIS, courts and most agencies.</p></details>
         <details><summary><span data-i18n="q4">How much does it cost?</span><span class="pm" aria-hidden="true">+</span></summary><p data-i18n="a4">Every service has a flat price. You receive the quote after a free review, before you pay anything.</p></details>
         <details><summary><span data-i18n="q5">How long does it take?</span><span class="pm" aria-hidden="true">+</span></summary><p data-i18n="a5">It depends on the service. Most translations are ready in a few business days, and we give you an estimated timeline together with your quote.</p></details>
       </div>
-    </div>
   </div>
 </section>
 
 </main>
 
-<!-- 10. CTA FINAL + RODAPÉ ============================================== -->
+<!-- CTA FINAL + RODAPÉ (montados pelo main.js) ============================================ -->
 <div data-component="cta"></div>
 <div data-component="footer"></div>
+
+<!-- Sem JavaScript o rodapé não é montado: telefones e aviso legal ficam aqui (mesmos dados de assets/js/config.js) -->
+<noscript><footer class="nojs-footer"><div class="wrap"><p><a href="tel:+14045023653">Vitoria 404-502-3653</a><a href="tel:+18588338923">Natalia 858-833-8923</a></p><p>Eazy Way Solutions is not a law firm and is not a substitute for an attorney. We cannot give legal advice, choose forms for you based on legal judgment, or represent you in court. Services are provided at your direction, based on the information you supply.</p></div></footer></noscript>
 
 <script src="assets/js/config.js" defer></script>
 <script src="assets/js/i18n.js" defer></script>

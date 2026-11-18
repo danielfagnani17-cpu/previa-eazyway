@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Idioma salvo antes da primeira pintura (o hash deste script está na CSP de site/_headers) -->
+<script>(function(){try{var l=localStorage.getItem("site-lang");if(l==="pt"||l==="es"){var d=document.documentElement;d.lang=l==="pt"?"pt-BR":l;d.classList.add("i18n-wait");setTimeout(function(){d.classList.remove("i18n-wait")},3000)}}catch(e){}})();</script>
 <title data-i18n="title_services">Services · Eazy Way Solutions</title>
 <meta name="description" content="Divorce, name change, certified translation, power of attorney, background checks, passports, visas and interpreters.">
 <!-- social:start (gerado por npm run blog, não edite à mão) -->
@@ -21,18 +24,14 @@
 <meta name="twitter:title" content="Services · Eazy Way Solutions">
 <meta name="twitter:description" content="Divorce, name change, certified translation, power of attorney, background checks, passports, visas and interpreters.">
 <meta name="twitter:image" content="https://www.eazywaysolutions.com/assets/img/og-default.jpg">
-<meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#FAFAF7">
 <!-- social:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Webfonts sem bloquear a primeira pintura: o main.js troca media para "all"; as fontes de reserva têm métrica ajustada (style.css) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap" media="print" data-async-css>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap"></noscript>
-<link rel="preload" as="image" type="image/webp" href="../assets/img/banner-services.webp" imagesrcset="../assets/img/banner-services-800.webp 800w, ../assets/img/banner-services.webp 1600w" imagesizes="(min-width:900px) 58vw, 100vw" fetchpriority="high">
+<!-- Fontes auto-hospedadas (variáveis, font-display: swap). Preload só do que aparece na primeira tela. -->
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/newsreader-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/libre-franklin-var.woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <noscript><link rel="stylesheet" href="../assets/css/nojs.css"></noscript>
 </head>
@@ -41,94 +40,74 @@
 
 <main id="main">
 
-<section class="page-hero on-photo">
-  <figure class="photo" data-img="pageServices"><noscript><img src="../assets/img/banner-services.webp" width="1600" height="1067" alt=""></noscript></figure>
-  <div class="shade"></div>
+<section class="page-hero">
   <div class="wrap">
-    <h1 class="h1" data-i18n="sv_title">Our Services</h1>
+    <h1 class="display" data-i18n="sv_title">Our Services</h1>
     <p class="lead" data-i18n="sv_sub">Each service starts with a free review, so you know the price and the timeline before you commit.</p>
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="../" data-i18n="nav_home">Home</a><svg aria-hidden="true"><use href="#i-chev"/></svg><span aria-current="page" data-i18n="nav_services">Services</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../" data-i18n="nav_home">Home</a><span aria-current="page" data-i18n="nav_services">Services</span></nav>
   </div>
 </section>
 
-<section class="section svc-list">
+<section class="chapters">
   <div class="wrap">
-    <nav class="svc-nav" aria-label="Services on this page">
-      <a href="#divorce"><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg><span data-i18n="s_divorce">Uncontested Divorce</span></a><a href="#name-change"><svg class="ic" aria-hidden="true"><use href="#i-id-card"/></svg><span data-i18n="s_name">Name Change</span></a><a href="#translation"><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg><span data-i18n="s_translation">Certified Translation</span></a><a href="#power-of-attorney"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg><span data-i18n="s_poa">Power of Attorney</span></a><a href="#prenup"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg><span data-i18n="s_prenup">Prenuptial &amp; Postnuptial</span></a><a href="#background"><svg class="ic" aria-hidden="true"><use href="#i-file-search"/></svg><span data-i18n="s_background">Background Checks</span></a><a href="#passport-visa"><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg><span data-i18n="s_passport">Passport &amp; Brazilian Visa</span></a><a href="#marriage-brazil"><svg class="ic" aria-hidden="true"><use href="#i-file-check"/></svg><span data-i18n="s_marriage">Marriage Registration in Brazil</span></a><a href="#interpreters"><svg class="ic" aria-hidden="true"><use href="#i-messages"/></svg><span data-i18n="s_interp">Interpreters</span></a>
+    <nav class="toc" aria-label="Services on this page">
+      <a href="#divorce"><span data-i18n="s_divorce">Uncontested Divorce</span></a><a href="#name-change"><span data-i18n="s_name">Name Change</span></a><a href="#translation"><span data-i18n="s_translation">Certified Translation</span></a><a href="#power-of-attorney"><span data-i18n="s_poa">Power of Attorney</span></a><a href="#prenup"><span data-i18n="s_prenup">Prenuptial &amp; Postnuptial</span></a><a href="#background"><span data-i18n="s_background">Background Checks</span></a><a href="#passport-visa"><span data-i18n="s_passport">Passport &amp; Brazilian Visa</span></a><a href="#marriage-brazil"><span data-i18n="s_marriage">Marriage Registration in Brazil</span></a><a href="#interpreters"><span data-i18n="s_interp">Interpreters</span></a>
     </nav>
-    <article class="svc-detail" id="divorce">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-file-text"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_divorce">Uncontested Divorce</h2>
-    <p class="lead" data-i18n="sv_divorce_text">When both spouses agree on the terms, we prepare the petition, the settlement agreement and the supporting forms your state requires, and explain how and where to file them.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_divorce_n1">Full names and addresses of both spouses</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_divorce_n2">Date and place of marriage</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_divorce_n3">Information about children, if any</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_divorce_n4">What you agreed about property, debts and custody</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="name-change">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-id-card"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_name">Name Change</h2>
-    <p class="lead" data-i18n="sv_name_change_text">We prepare the court petition for a name change and, once it is approved, the updates you need for Social Security, your driver&#x27;s license and your passport.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_name_change_n1">Current photo ID</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_name_change_n2">Birth certificate</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_name_change_n3">The new name you want to use</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_name_change_n4">Reason for the change</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="translation">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-languages"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_translation">Certified Translation</h2>
-    <p class="lead" data-i18n="sv_translation_text">Birth and marriage certificates, school records, diplomas and legal documents translated with a signed statement of accuracy, ready for USCIS, courts, schools and consulates.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_translation_n1">A clear scan or photo of every page</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_translation_n2">Names spelled as they appear in your passport</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_translation_n3">Where the translation will be submitted</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="power-of-attorney">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_poa">Power of Attorney</h2>
-    <p class="lead" data-i18n="sv_power_of_attorney_text">General or specific powers of attorney, prepared in English or Portuguese. For documents that will be used in Brazil, we explain the notarization and apostille steps.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_power_of_attorney_n1">ID of the person granting the powers</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_power_of_attorney_n2">Full name and details of the agent</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_power_of_attorney_n3">The powers to be granted</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_power_of_attorney_n4">The country where it will be used</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="prenup">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-gem"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_prenup">Prenuptial &amp; Postnuptial</h2>
-    <p class="lead" data-i18n="sv_prenup_text">We draft prenuptial and postnuptial agreements from the terms you and your partner have decided on, ready for review by each party and for signature.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_prenup_n1">Information about both partners</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_prenup_n2">Wedding date, or marriage date for postnuptials</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_prenup_n3">List of assets and debts</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_prenup_n4">The terms you both agreed on</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="background">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-file-search"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_background">Background Checks</h2>
-    <p class="lead" data-i18n="sv_background_text">We prepare FBI Identity History Summary requests and Freedom of Information Act (FOIA) requests to the FBI and CBP, and track them until you receive your records.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_background_n1">Full name and any previous names</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_background_n2">Date and place of birth</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_background_n3">Fingerprints, for FBI requests</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_background_n4">What records you are looking for</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="passport-visa">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-plane"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_passport">Passport &amp; Brazilian Visa</h2>
-    <p class="lead" data-i18n="sv_passport_visa_text">We prepare U.S. passport applications and Brazilian visa applications for U.S. citizens, with a checklist of every document and photo required.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_passport_visa_n1">Proof of citizenship</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_passport_visa_n2">Photo ID</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_passport_visa_n3">Passport photo</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_passport_visa_n4">Travel dates, for visa applications</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="marriage-brazil">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-file-check"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_marriage">Marriage Registration in Brazil</h2>
-    <p class="lead" data-i18n="sv_marriage_brazil_text">Register a marriage performed in the U.S. with the Brazilian consulate. We organize the apostille, the certified translation and the consular forms.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_marriage_brazil_n1">U.S. marriage certificate</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_marriage_brazil_n2">Brazilian documents of the Brazilian spouse</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_marriage_brazil_n3">ID of both spouses</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_marriage_brazil_n4">Consulate where you will submit</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article><article class="svc-detail" id="interpreters">
-  <div class="svc-ico"><svg class="ic" aria-hidden="true"><use href="#i-messages"/></svg></div>
-  <div class="stack-lg">
-    <h2 class="h2" data-i18n="s_interp">Interpreters</h2>
-    <p class="lead" data-i18n="sv_interpreters_text">Professional interpreters in person for interviews and appointments in Georgia, Alabama and Colorado, and phone interpretation in Portuguese and Spanish anywhere in the U.S.</p>
-    <div class="need"><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><ul class="checks"><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_interpreters_n1">Date, time and address of the appointment</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_interpreters_n2">Language needed</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_interpreters_n3">Type of appointment</span></li><li><svg aria-hidden="true"><use href="#i-check"/></svg><span data-i18n="sv_interpreters_n4">Expected duration</span></li></ul></div>
-    <a class="link-arrow underlined" href="../contact/"><span data-i18n="btn_quote">Request a Quote</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  </div>
-</article>
+    <article class="chapter" id="divorce">
+      <h2 class="h2" data-i18n="s_divorce">Uncontested Divorce</h2>
+      <p class="lead" data-i18n="sv_divorce_text">When both spouses agree on the terms, we prepare the petition, the settlement agreement and the supporting forms your state requires, and explain how and where to file them.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_divorce_n1">Full names and addresses of both spouses</span></li><li><span data-i18n="sv_divorce_n2">Date and place of marriage</span></li><li><span data-i18n="sv_divorce_n3">Information about children, if any</span></li><li><span data-i18n="sv_divorce_n4">What you agreed about property, debts and custody</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="name-change">
+      <h2 class="h2" data-i18n="s_name">Name Change</h2>
+      <p class="lead" data-i18n="sv_name_change_text">We prepare the court petition for a name change and, once it is approved, the updates you need for Social Security, your driver&#x27;s license and your passport.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_name_change_n1">Current photo ID</span></li><li><span data-i18n="sv_name_change_n2">Birth certificate</span></li><li><span data-i18n="sv_name_change_n3">The new name you want to use</span></li><li><span data-i18n="sv_name_change_n4">Reason for the change</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="translation">
+      <h2 class="h2" data-i18n="s_translation">Certified Translation</h2>
+      <p class="lead" data-i18n="sv_translation_text">Birth and marriage certificates, school records, diplomas and legal documents translated with a signed statement of accuracy, ready for USCIS, courts, schools and consulates.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_translation_n1">A clear scan or photo of every page</span></li><li><span data-i18n="sv_translation_n2">Names spelled as they appear in your passport</span></li><li><span data-i18n="sv_translation_n3">Where the translation will be submitted</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="power-of-attorney">
+      <h2 class="h2" data-i18n="s_poa">Power of Attorney</h2>
+      <p class="lead" data-i18n="sv_power_of_attorney_text">General or specific powers of attorney, prepared in English or Portuguese. For documents that will be used in Brazil, we explain the notarization and apostille steps.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_power_of_attorney_n1">ID of the person granting the powers</span></li><li><span data-i18n="sv_power_of_attorney_n2">Full name and details of the agent</span></li><li><span data-i18n="sv_power_of_attorney_n3">The powers to be granted</span></li><li><span data-i18n="sv_power_of_attorney_n4">The country where it will be used</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="prenup">
+      <h2 class="h2" data-i18n="s_prenup">Prenuptial &amp; Postnuptial</h2>
+      <p class="lead" data-i18n="sv_prenup_text">We draft prenuptial and postnuptial agreements from the terms you and your partner have decided on, ready for review by each party and for signature.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_prenup_n1">Information about both partners</span></li><li><span data-i18n="sv_prenup_n2">Wedding date, or marriage date for postnuptials</span></li><li><span data-i18n="sv_prenup_n3">List of assets and debts</span></li><li><span data-i18n="sv_prenup_n4">The terms you both agreed on</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="background">
+      <h2 class="h2" data-i18n="s_background">Background Checks</h2>
+      <p class="lead" data-i18n="sv_background_text">We prepare FBI Identity History Summary requests and Freedom of Information Act (FOIA) requests to the FBI and CBP, and track them until you receive your records.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_background_n1">Full name and any previous names</span></li><li><span data-i18n="sv_background_n2">Date and place of birth</span></li><li><span data-i18n="sv_background_n3">Fingerprints, for FBI requests</span></li><li><span data-i18n="sv_background_n4">What records you are looking for</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="passport-visa">
+      <h2 class="h2" data-i18n="s_passport">Passport &amp; Brazilian Visa</h2>
+      <p class="lead" data-i18n="sv_passport_visa_text">We prepare U.S. passport applications and Brazilian visa applications for U.S. citizens, with a checklist of every document and photo required.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_passport_visa_n1">Proof of citizenship</span></li><li><span data-i18n="sv_passport_visa_n2">Photo ID</span></li><li><span data-i18n="sv_passport_visa_n3">Passport photo</span></li><li><span data-i18n="sv_passport_visa_n4">Travel dates, for visa applications</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="marriage-brazil">
+      <h2 class="h2" data-i18n="s_marriage">Marriage Registration in Brazil</h2>
+      <p class="lead" data-i18n="sv_marriage_brazil_text">Register a marriage performed in the U.S. with the Brazilian consulate. We organize the apostille, the certified translation and the consular forms.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_marriage_brazil_n1">U.S. marriage certificate</span></li><li><span data-i18n="sv_marriage_brazil_n2">Brazilian documents of the Brazilian spouse</span></li><li><span data-i18n="sv_marriage_brazil_n3">ID of both spouses</span></li><li><span data-i18n="sv_marriage_brazil_n4">Consulate where you will submit</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    <article class="chapter" id="interpreters">
+      <h2 class="h2" data-i18n="s_interp">Interpreters</h2>
+      <p class="lead" data-i18n="sv_interpreters_text">Professional interpreters in person for interviews and appointments in Georgia, Alabama and Colorado, and phone interpretation in Portuguese and Spanish anywhere in the U.S.</p>
+      <details class="need fold"><summary><h4 aria-level="3" data-i18n="need_title">What we need to start</h4><span class="pm" aria-hidden="true"></span></summary><ul class="plain"><li><span data-i18n="sv_interpreters_n1">Date, time and address of the appointment</span></li><li><span data-i18n="sv_interpreters_n2">Language needed</span></li><li><span data-i18n="sv_interpreters_n3">Type of appointment</span></li><li><span data-i18n="sv_interpreters_n4">Expected duration</span></li></ul></details>
+      <a class="link tap" href="../contact/" data-i18n="btn_quote">Request a Quote</a>
+    </article>
+    
   </div>
 </section>
 
@@ -136,6 +115,9 @@
 
 <div data-component="cta"></div>
 <div data-component="footer"></div>
+
+<!-- Sem JavaScript o rodapé não é montado: telefones e aviso legal ficam aqui (mesmos dados de assets/js/config.js) -->
+<noscript><footer class="nojs-footer"><div class="wrap"><p><a href="tel:+14045023653">Vitoria 404-502-3653</a><a href="tel:+18588338923">Natalia 858-833-8923</a></p><p>Eazy Way Solutions is not a law firm and is not a substitute for an attorney. We cannot give legal advice, choose forms for you based on legal judgment, or represent you in court. Services are provided at your direction, based on the information you supply.</p></div></footer></noscript>
 
 <script src="../assets/js/config.js" defer></script>
 <script src="../assets/js/i18n.js" defer></script>

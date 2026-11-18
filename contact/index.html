@@ -1,8 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Idioma salvo antes da primeira pintura (o hash deste script está na CSP de site/_headers) -->
+<script>(function(){try{var l=localStorage.getItem("site-lang");if(l==="pt"||l==="es"){var d=document.documentElement;d.lang=l==="pt"?"pt-BR":l;d.classList.add("i18n-wait");setTimeout(function(){d.classList.remove("i18n-wait")},3000)}}catch(e){}})();</script>
 <title data-i18n="title_contact">Contact · Eazy Way Solutions</title>
 <meta name="description" content="Request a free review of your case. Service in English, Portuguese and Spanish.">
 <!-- social:start (gerado por npm run blog, não edite à mão) -->
@@ -21,53 +24,44 @@
 <meta name="twitter:title" content="Contact · Eazy Way Solutions">
 <meta name="twitter:description" content="Request a free review of your case. Service in English, Portuguese and Spanish.">
 <meta name="twitter:image" content="https://www.eazywaysolutions.com/assets/img/og-default.jpg">
-<meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="../favicon.ico" sizes="48x48">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <meta name="theme-color" content="#FAFAF7">
 <!-- social:end -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- Webfonts sem bloquear a primeira pintura: o main.js troca media para "all"; as fontes de reserva têm métrica ajustada (style.css) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap" media="print" data-async-css>
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@400;500;600&display=swap"></noscript>
-<link rel="preload" as="image" type="image/webp" href="../assets/img/cta-signing.webp" imagesrcset="../assets/img/cta-signing-800.webp 800w, ../assets/img/cta-signing.webp 1600w" imagesizes="(min-width:900px) 58vw, 100vw" fetchpriority="high">
+<!-- Fontes auto-hospedadas (variáveis, font-display: swap). Preload só do que aparece na primeira tela. -->
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/newsreader-var.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/libre-franklin-var.woff2" crossorigin>
 <link rel="stylesheet" href="../assets/css/style.css">
 <noscript><link rel="stylesheet" href="../assets/css/nojs.css"></noscript>
 </head>
 <body data-page="contact" data-root="../">
 <div data-component="header"></div>
 
-<main id="main">
+<main id="main" class="contact-page">
 
-<section class="page-hero on-photo">
-  <figure class="photo" data-img="pageContact"><noscript><img src="../assets/img/cta-signing.webp" width="1600" height="1200" alt=""></noscript></figure>
-  <div class="shade"></div>
+<section class="page-hero">
   <div class="wrap">
-    <h1 class="h1" data-i18n="ct_title">Contact Us</h1>
+    <h1 class="display" data-i18n="ct_title">Contact Us</h1>
     <p class="lead" data-i18n="ct_sub">Tell us what you need. We reply in English, Portuguese or Spanish.</p>
-    <nav class="crumbs" aria-label="Breadcrumb"><a href="../" data-i18n="nav_home">Home</a><svg aria-hidden="true"><use href="#i-chev"/></svg><span aria-current="page" data-i18n="nav_contact">Contact</span></nav>
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="../" data-i18n="nav_home">Home</a><span aria-current="page" data-i18n="nav_contact">Contact</span></nav>
   </div>
 </section>
 
-<section class="section tight alt">
+<!-- Telefones, e-mails, região e horário: lista de texto, com os nomes -->
+<section class="contact-info">
   <div class="wrap">
-    <div class="contact-cards">
-      <div class="c-card"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><h3 aria-level="2" data-i18n="ct_call">Call us</h3><div class="c-list" data-contact="phones"></div></div>
-      <div class="c-card"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span><h3 aria-level="2" data-i18n="ct_email">Email</h3><div class="c-list" data-contact="emails"></div></div>
-      <div class="c-card"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span><h3 aria-level="2" data-i18n="ct_office">Location</h3><p data-contact="address"></p></div>
-      <div class="c-card"><span class="icon"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span><h3 aria-level="2" data-i18n="ct_hours">Hours</h3><p data-contact="hours"></p></div>
-    </div>
+    <div class="block"><h3 aria-level="2" data-i18n="ct_call">Call us</h3><div class="c-list" data-contact="phones"></div></div>
+    <div class="block"><h3 aria-level="2" data-i18n="ct_email">Email</h3><div class="c-list" data-contact="emails"></div></div>
+    <div class="block"><h3 aria-level="2" data-i18n="ct_office">Location</h3><p data-contact="address"></p></div>
+    <div class="block"><h3 aria-level="2" data-i18n="ct_hours">Hours</h3><p data-contact="hours"></p></div>
   </div>
 </section>
 
-<section class="section">
-  <div class="wrap two-col top">
+<section class="contact-main">
+  <div class="wrap">
     <form class="form" data-form novalidate aria-labelledby="form-title">
-      <div class="stack">
-        <h2 class="h2" id="form-title" data-i18n="form_title">Request a quote</h2>
-      </div>
+      <h2 class="h2" id="form-title" data-i18n="form_title">Request a quote</h2>
       <div class="row">
         <div class="field"><label for="f-name" data-i18n="f_name">Full name *</label><input id="f-name" name="name" autocomplete="name" data-required aria-describedby="e-name"><span class="err" id="e-name" aria-live="polite"></span></div>
         <div class="field"><label for="f-phone" data-i18n="f_phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
@@ -94,11 +88,11 @@
       </div>
       <div class="field"><label for="f-msg" data-i18n="f_msg">Tell us briefly about your case *</label><textarea id="f-msg" name="message" data-required aria-describedby="e-msg"></textarea><span class="err" id="e-msg" aria-live="polite"></span></div>
       <label class="consent" for="f-consent"><input id="f-consent" name="consent" type="checkbox"><span data-i18n="f_consent">I understand that Eazy Way Solutions is not a law firm and does not provide legal advice.</span></label>
-      <button class="btn btn-brand" type="submit"><span data-i18n="f_send">Send Request</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-solid" type="submit"><span data-i18n="f_send">Send Request</span></button>
       <p class="form-status" role="status" hidden></p>
     </form>
 
-    <div class="stack-lg">
+    <div class="areas-col">
       <h2 class="h2" data-i18n="ct_areas_title">Remote across the U.S., in person where you need us</h2>
       <p class="lead" data-i18n="ct_areas_text">Document preparation and translation are done online or by phone. Interpreters can meet you in person in these states.</p>
       <div class="areas">
@@ -107,9 +101,9 @@
         <div><small>CO</small><b>Colorado</b></div>
         <div class="wide"><small data-i18n="ct_phone_lbl">BY PHONE · NATIONWIDE</small><b>Português · Español</b></div>
       </div>
-      <div class="btns btns-2">
-        <a class="btn btn-dark" data-contact="whatsapp" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg><span>WhatsApp</span></a>
-        <a class="btn btn-outline" href="tel:" data-contact-tel></a>
+      <div class="reach">
+        <a class="wa" data-contact="whatsapp" href="#" target="_blank" rel="noopener"><span>WhatsApp</span></a>
+        <a class="tel" href="tel:" data-contact-tel></a>
       </div>
       <div class="faq">
         <details><summary><span data-i18n="q1">Are you a law firm?</span><span class="pm" aria-hidden="true">+</span></summary><p data-i18n="a1">No. We are a document preparation service. We prepare and translate documents based on the information you provide, and we do not give legal advice. If your case needs an attorney, we will tell you.</p></details>
@@ -122,6 +116,9 @@
 </main>
 
 <div data-component="footer"></div>
+
+<!-- Sem JavaScript o rodapé não é montado: telefones e aviso legal ficam aqui (mesmos dados de assets/js/config.js) -->
+<noscript><footer class="nojs-footer"><div class="wrap"><p><a href="tel:+14045023653">Vitoria 404-502-3653</a><a href="tel:+18588338923">Natalia 858-833-8923</a></p><p>Eazy Way Solutions is not a law firm and is not a substitute for an attorney. We cannot give legal advice, choose forms for you based on legal judgment, or represent you in court. Services are provided at your direction, based on the information you supply.</p></div></footer></noscript>
 
 <script src="../assets/js/config.js" defer></script>
 <script src="../assets/js/i18n.js" defer></script>
